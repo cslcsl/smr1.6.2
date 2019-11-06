@@ -1,0 +1,13 @@
+<view class='wrapper'>
+    <view class='loginBg'>
+        <image src='../../../images/common/bg.png' mode='aspectFix'></image>
+    </view>
+    <view class='formWrap'>
+        <view class='formList'>
+            <view>
+                <input placeholder-class='placeholder' placeholder='请输入企业ID' onInput='companyIDInput' type='text'></input>
+            </view>
+            <view class="button {{companyID!=''?'confirm':''}}" onTap='loginBtn'>确定</view>
+        </view>
+    </view>
+</view>

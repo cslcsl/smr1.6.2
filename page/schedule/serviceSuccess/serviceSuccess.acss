@@ -1,0 +1,22 @@
+.buttonWrap {
+    width: 100%;
+    padding: 0rpx 40rpx;
+    box-sizing: border-box;
+}
+
+.buttonWrap {
+    position: fixed;
+    bottom: 40rpx;
+}
+.buttonWrap .button{
+	color:#2B7AFB;
+	border: 1px solid #2B7AFB;
+	background: #fff;
+}
+.contentNull {
+    background: #fff;
+}
+.contentNull text{
+	color:#666;
+	font-size: 30rpx;
+}

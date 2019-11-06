@@ -1,0 +1,36 @@
+<view class='wrapper'>
+    <view class='scanImg'>
+        <image src='../../../images/common/scanCodeImg.png' mode='widthFix'></image>
+    </view>
+    <view class='scanWrap'>
+
+        <view class='top'>
+
+            <view class='scanQR' a:if='{{showSign}}'>
+                <image class='qrImage' src='{{imagePath}}' mode='widthFix'></image>
+                <canvas hidden='{{canvasHidden}}' style="width: 686rpx; height: 686rpx;background:#ddffff;" canvas-id="mycanvas" />
+                <view>
+                    <label class='qrTip'>扫二维码签到</label>
+                </view>
+                <image class='qrHide' onTap='stopSign' src='../../../images/common/ico-arrowup.png' mode='widthFix'></image>
+            </view>
+
+            <view a:else>
+                <image class='qrShow' onTap='qrClick' src='../../../images/common/ico-QRcode.png' mode='widthFix'></image>
+            </view>
+
+            <label class='signed'>已签到：{{list.length}}/{{totalNumber}}</label>
+        </view>
+
+        <view class='listWrap'>
+            <view class='list' a:for='{{list}}' a:key='{{item.userName}}'>
+                <view>
+                    <image src='{{item.pictureUrl}}' mode='scaleToFill' a:if="{{item.pictureUrl!=''&&item.pictureUrl!=null}}"></image>
+                    <image src='../../../images/common/advar.png' mode='scaleToFill' a:else></image>
+                    {{item.userName}}
+                </view>
+                <view>{{item.signTime}}</view>
+            </view>
+        </view>
+    </view>
+</view>

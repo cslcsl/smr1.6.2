@@ -1,0 +1,53 @@
+<view class='meetingWrap' a:if='{{dataList.length>0}}'>
+    <view class='meetinList' onTap='meetingClick' data-index='0' data-type='0'>
+        <view class='meetinListL'>
+            <view>
+                <image src='../../images/common/serviceIcon1.png' mode='widthFix'></image>{{dataList[index].mroomName}}
+            </view>
+            <view>
+                <image src='../../images/common/zhuti.png' mode='widthFix'></image>{{dataList[index].meetingSubject}}
+            </view>
+            <view>
+                <image src='../../images/common/serviceIcon3.png' mode='widthFix'></image>
+                {{dataList[index].scheduleStartTime}} - {{dataList[index].scheduleEndTime}}
+            </view>
+        </view>
+        <view class='meetinListR'>
+            <image src='../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class="meetingInfo">会议开始前1小时可开公共门、前15分钟开会议室门</view>
+    <view class='buttonWrap buttonWrap1' onTap='meetingClick' data-type='2'>
+        <image src='../../images/common/scheduleIcon1.png' mode='widthFix'></image>
+    </view>
+    <view class='buttonWrap' onTap='meetingClick' data-type='1'>
+        <image src='../../images/common/openDoor.png' mode='widthFix'></image>
+    </view>
+</view>
+<view class='contentNull' a:if='{{dataList.length<=0}}'>
+    <image src='../../images/common/servieceNull.png' mode='widthFix'></image>
+    <text>48小时内，你没有会议要进行</text>
+</view>
+<block a:if='{{alertState}}'>
+    <view class='maskBg' catchTap='maskBg'>
+        <view class='alertWrap {{alertState?"fadeInDown animated":""}}'>
+            <view class='meetinList' a:for='{{dataList}}' onTap='meetingClick' data-index='{{index}}' a:if='{{alertType==0}}' data-type='0'>
+                <view class='meetinListL'>
+                    <view>
+                        <image src='../../images/common/serviceIcon1.png' mode='widthFix'></image>{{item.mroomName}}
+                    </view>
+                    <view>
+                        <image src='../../images/common/zhuti.png' mode='widthFix'></image>{{item.meetingSubject}}
+                    </view>
+                    <view>
+                        <image src='../../images/common/serviceIcon3.png' mode='widthFix'></image>{{item.scheduleStartTime}} - {{item.scheduleEndTime}}
+                    </view>
+                </view>
+            </view>
+            <view class='doorList' a:if='{{alertType==1}}'>
+                <view a:for='{{doorList}}' data-index='{{index}}' catchTap='openDoor'>{{item.doorName}}</view>
+                <view class='' catchTap='maskBg'>取消</view>
+            </view>
+        </view>
+    </view>
+</block>

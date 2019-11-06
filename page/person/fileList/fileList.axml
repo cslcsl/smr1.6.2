@@ -1,0 +1,48 @@
+
+<view class='fileWrap'>
+    <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+        <view class='fileL'>
+            <image src='../../../images/common/JPG.png' mode='widthFix'></image>
+            <text>{{item.type}}
+				</text>
+        </view>
+        <view class='fileR'>
+            <view onTap='clickFile' data-index='{{index}}'>
+                <view class='title'>
+                    <view>{{item.fileName}}</view>
+                    <view>{{filters.tokb(item.fileSize)}}KB</view>
+                </view>
+                <view class='inforlist'>
+                    <view>
+                        <block a:if="{{item.userName!=null}}">{{item.userName }} </block>
+                        <text>{{item.createTime}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='delete' onTap='fileDelete' data-userid='{{item.userId}}' data-id='{{item.id}}' data-index='{{index}}'>删除</view>
+        </view>
+    </view>
+</view>
+<view class='contentNull' a:if='{{fileList.length<=0}}'>
+    <image src='../../../images/common/nullInfo.png' mode='widthFix'></image>
+    <text>暂无数据</text>
+</view>
+<block a:if='{{agendaState}}'>
+    <view class='maskBg audioWrap'>
+        <view class='agendaAddWrap {{agendaState?"fadeInUp animated":""}}'>
+            <view class='agendaAddTop'>
+                <view>当前播放</view>
+            </view>
+            <view class='addList'>
+                <audio action="{{action}}" src="{{src}}" id="myAudio" controls style='margin:40rpx 0rpx;display:none;' bindtimeupdate="musicStart" bindplay='audioPlay' ></audio>
+                <view class='name'>{{fileList[index].fileName}}</view>
+				<view class="sliderWrap">
+					<slider onChange="slider4change" step="1" min="0" max="{{duration}}" value="{{currentTime}}" bindchanging='sliderChangeing' block-color="#fff" activeColor='#2b7afb'/>
+				</view>
+            </view>
+            <view class='agendaAddBottom'>
+                <view onTap='audioPause' class='pause'>停止播放</view>
+            </view>
+        </view>
+    </view>
+</block>

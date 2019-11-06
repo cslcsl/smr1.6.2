@@ -1,0 +1,123 @@
+page {
+    background: #f4f4f4;
+}
+
+.personTop image {
+    width: 100%;
+}
+
+.wrapper {
+    background: #fff;
+    height: 414rpx;
+}
+
+.personInfo {
+    position: fixed;
+    top: 60rpx;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.personInfo .advar {
+    width: 256rpx;
+    height: 256rpx;
+    border-radius: 100%;
+}
+
+.personInfo .camera {
+    width: 116rpx;
+    height: 116rpx;
+    border-radius: 100%;
+    position: fixed;
+    top: 130rpx;
+    left: 50%;
+    margin-left: -58rpx;
+    z-index: 999;
+}
+
+.menuList {
+    padding: 0rpx 30rpx;
+    margin-top: 24rpx;
+	background:#fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.menuList .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 34rpx;
+    color: #8192a7;
+    position: relative;
+}
+.menuList .list:last-child{
+	border-bottom:none;
+}
+.menuList .list:first-child {
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.menuList image {
+    width: 20rpx;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.menuList text {
+    margin-right: 16rpx;
+    color: #2d2d2d;
+}
+
+.confirm {
+    box-sizing: border-box;
+    background: #fff;
+	border:1px solid #2b7afb;
+	color:#2b7afb;
+    position: absolute;
+    height: 94rpx;
+    line-height: 94rpx;
+    display: block;
+    left: 40rpx;
+    right: 40rpx;
+    bottom: 40rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+}
+
+.placeholder {
+    color: #2d2d2d;
+}
+
+.menuList input {
+    text-align: right;
+    margin-right: 20rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: inline-block;
+	color:#1E1E1E;
+	vertical-align: middle;
+}
+
+.menuList image:last-child {
+    width: 17rpx;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.menuList .advar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    margin-right: 20rpx;
+}

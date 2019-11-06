@@ -1,0 +1,53 @@
+page {
+    background: #fff;
+}
+
+
+.orderWrap {
+    border-top:16rpx solid #f4f4f4;
+	background:#fff;
+}
+
+.orderDetail {
+    margin: 0rpx 30rpx;
+	padding:30rpx 0rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.listR image {
+    width: 27rpx;
+}
+
+.listTop, .listMiddle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.listTop {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.listTop view:last-child {
+    font-size: 30rpx;
+}
+
+.listMiddle {
+    color: #333;
+    font-size: 30rpx;
+	margin:10rpx 0rpx;
+}
+
+.listBottom {
+    font-size: 24rpx;
+    color: #8192a7;
+	margin:10rpx 0rpx;
+}
+
+.listMiddle view:first-child {
+	
+}

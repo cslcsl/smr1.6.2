@@ -1,0 +1,8 @@
+{
+	"backgroundTextStyle": "light",
+	"navigationBarBackgroundColor": "#fff",
+	"defaultTitle": "预订",
+	"navigationBarTextStyle": "black",
+	"pullRefresh": true,
+	"onReachBottomDistance": 100
+}

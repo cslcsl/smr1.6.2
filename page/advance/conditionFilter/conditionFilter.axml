@@ -1,0 +1,113 @@
+<view class='filterList'>
+    <view class='listTitle'>哪一天开会</view>
+    <view class='list'>
+        <view>
+            <picker start='{{dataListDetail.meetingDate}}' mode="date" value="{{dataListDetail.meetingDate}}" onChange="bindDateChange">
+                {{dataListDetail.meetingDate}}
+            </picker>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='listTitle'>指定会议时间吗？</view>
+    <view class='list'>
+        <view>
+            <picker mode="multiSelector" range="{{dataListDetail.timeInputList}}" onChange="bindTimeChange" bindcancel='bindTimeCancel' value="{{dataListDetail.timeInputIndex}}">
+            <block a:if='{{dataListDetail.timeInputIndex.length==0||dataListDetail.timeSelectState==false}}'>不指定</block>
+            <block a:else>
+            {{dataListDetail.timeInputList[0][dataListDetail.timeInputIndex[0]]}}-{{dataListDetail.timeInputList[1][dataListDetail.timeInputIndex[1]]}}
+            </block>   
+            </picker>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <block a:if='{{dataListDetail.timeInputIndex==1}}'>
+        <view class='list'>
+            <view>
+                <picker mode="multiSelector" onChange="beginTimeChange" bindcolumnchange="beginTimeColumnChange" value="{{dataListDetail.beginTimeIndex}}" range="{{dataListDetail.timeList}}">
+                    <view class="picker">
+                        <text a:if='{{dataListDetail.beginTimeIndex.length>0}}'>{{dataListDetail.timeList[0][dataListDetail.beginTimeIndex[0]]}}:{{dataListDetail.timeList[1][dataListDetail.beginTimeIndex[1]]}}</text>
+                        <text a:else class='placeholder'>请选择开始时间</text>
+                    </view>
+                </picker>
+                <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+            </view>
+        </view>
+        <view class='list'>
+            <view>
+                <picker mode="multiSelector" onChange="endTimeChange" bindcolumnchange="endTimeColumnChange" range="{{dataListDetail.timeList}}">
+                    <view class="picker">
+                        <text a:if='{{dataListDetail.endTimeIndex.length>0}}'>{{dataListDetail.timeList[0][dataListDetail.endTimeIndex[0]]}}:{{dataListDetail.timeList[1][dataListDetail.endTimeIndex[1]]}}</text>
+                        <text a:else class='placeholder'>请选择结束时间</text>
+                    </view>
+                </picker>
+                <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+            </view>
+        </view>
+    </block>
+    <view class='listTitle'>在哪里开会</view>
+    <view class='list'>
+        <view>
+            <picker mode="multiSelector" onChange="bindProjectPickerChange" bindcolumnchange="bindProjectPickerColumnChange" range="{{dataListDetail.projectList}}">
+                <view class="picker {{dataListDetail.projectIndex.length==0?'placeholder':''}}">
+                    <block a:if='{{dataListDetail.projectIndex.length>0}}'>
+                        {{dataListDetail.projectList[2][dataListDetail.projectIndex[2]]}}
+                    </block>
+                    <block a:else>请选择地点</block>
+                </view>
+            </picker>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>
+            <view class="picker {{dataListDetail.projectIndex.length==0?'placeholder':''}}">
+                <block a:if='{{dataListDetail.projectIndex.length>0}}'>
+                    <picker onChange="bindBuildingChange" range="{{dataListDetail.buildingList}}">
+                        {{dataListDetail.buildingList[dataListDetail.buildingListIndex]}}
+
+                    </picker>
+                </block>
+                <view a:else catchTap='buildingClear' data-type='1'>请选择楼栋</view>
+            </view>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>
+            <view class="picker {{dataListDetail.projectIndex.length==0?'placeholder':''}}">
+                <block a:if='{{dataListDetail.projectIndex.length>0}}'>
+                    <picker onChange="bindFloorChange" range="{{dataListDetail.floorList}}">
+                        {{dataListDetail.floorList[dataListDetail.floorListIndex]}}
+                    </picker>
+                </block>
+                <view a:else catchTap='buildingClear' data-type='2'>请选择楼层</view>
+            </view>
+
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='listTitle'>多少人参会</view>
+    <!-- <view class='list'>
+        <view>
+            <picker onChange="bindPeopleNumChange" value="{{peopleNumIndex}}" range="{{dataListDetail.peopleNumList}}">
+                {{dataListDetail.peopleNumList[dataListDetail.peopleNumIndex]}}
+            </picker>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view> -->
+    <view class='peopleList'>
+        <text a:for='{{dataListDetail.peopleNumList}}' catchTap='bindPeopleNumChange' data-value='{{item}}' data-index='{{index}}' class='{{index==dataListDetail.peopleNumIndex?"select":""}}'>{{item}}人</text>
+    </view>
+    <view class='listTitle'>需要哪些设备？</view>
+    <view class='list'>
+        <view onTap='deviedSelect'>
+            <text a:if='{{dataListDetail.deviedList!=""}}'><block a:for='{{dataListDetail.deviedList}}'> {{item.equipmentName}}</block></text>
+            <text a:else>选择设备</text>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+</view>
+<view class='btnList'>
+    <view class='reset' onTap='reset'>重置</view>
+    <view class='search' onTap='search'>筛选</view>
+</view>

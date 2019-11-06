@@ -1,0 +1,109 @@
+.scanImg image {
+    width: 100%;
+    height: auto;
+}
+
+page {
+    background: #f4f4f4;
+}
+
+.scanWrap {
+    position: relative;
+    background: #fff;
+    margin: 15rpx 30rpx 30rpx 30rpx;
+    padding: 60rpx 0rpx;
+    border-radius: 24rpx;
+    box-shadow: 0px 10rpx 20rpx 0px rgba(0, 0, 0, 0.08);
+}
+
+.scanWrap .top {
+    width: 100%;
+    margin: -100rpx auto 0rpx auto;
+    text-align: center;
+}
+
+.qrShow {
+    width: 78rpx;
+}
+
+.top {
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.signed {
+    color: #2b7afb;
+    margin: 40rpx 0rpx 0rpx 0rpx;
+    font-size: 34rpx;
+}
+
+.qrImage {
+    width: 400rpx;
+    height: 400rpx;
+    margin-top: 80rpx;
+    background: white;
+}
+
+.qrTip {
+    margin-top: 15rpx;
+    font: 30rpx;
+    color: #464646;
+}
+
+.qrHide {
+    margin-top: 15rpx;
+    width: 51rpx;
+    height: 51rpx;
+}
+
+.listWrap {
+    margin: 10rpx 30rpx 0rpx 30rpx;
+}
+
+.listWrap image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.scanWrap .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110rpx;
+    line-height: 110rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.listWrap .list label {
+    width: 12rpx;
+    height: 12rpx;
+    background: #2b7afb;
+    display: inline-block;
+    margin: 0rpx 40rpx 0rpx 10rpx;
+    border-radius: 100%;
+}
+
+.listWrap .list view:first-child {
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	max-width:50%;
+}
+
+.listWrap .list view:last-child {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.scanQR canvas {
+    position: fixed;
+    top: 999999rpx;
+    left: 0;
+    z-index: -1;
+}

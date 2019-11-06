@@ -1,0 +1,39 @@
+<view class='wrapper'>
+  <view class='loginBg'>
+    <image src='../../../images/common/bg.png' mode='scaleToFill'/>
+  </view>
+  <view class='logoImg'>
+    <image src='../../../images/common/logo.png' mode='widthFix'/>
+  </view>
+  <view class='loginStyle'>
+    <view class="first">
+      <button class='phone' onTap="getPhoneNumber">
+        <!-- <image src='../../../images/common/wechatIcon2.png' mode='widthFix'/> -->
+        <text>钉钉授权登录</text>
+      </button>
+    </view>
+    <view>
+      <navigator url='../loginAccount/loginAccount'>
+        <text>账号密码登录</text>
+      </navigator>
+    </view>
+  </view>
+  <block a:if='{{maskWrap}}'>
+    <view class='maskBg'>
+      <view class='agendaAddWrap {{maskWrap?"fadeInUp animated":""}}'>
+        <view class='content'>
+          <view class='accountImg'>
+            <image src='../../../images/common/accountImg.png' mode='widthFix'/>
+          </view>
+          <view class='infor'>
+            <text>手机号未绑定账户</text>
+            <text>是否使用此手机号创建新账户？</text>
+          </view>
+          <button class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo">创建</button>
+          <!--<view class='button' onTap='loginPassword'></view> -->
+        </view>
+        <view class='close' onTap='maskClose'>X</view>
+      </view>
+    </view>
+  </block>
+</view>

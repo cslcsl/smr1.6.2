@@ -1,0 +1,43 @@
+<view class='searchTop' onTap="alertBlock">
+    <view class='searchL'>{{titleName}}</view>
+	<view class='searchR' onTap='searchCancel'>
+		<image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+	</view>
+</view>
+<view class='searchListWrap'>
+    <view class='searchList'>
+        <view class='list' a:for='{{selectTypeList}}' onTap='userListClick' data-state='{{item.state}}' data-index='{{index}}'>
+            <view class='listL {{item.state?"stateTrue":""}}'>
+                <block a:if='{{item.state}}'>
+                    <image src='../../../images/common/checkbox-true.png' mode='widthFix' class='checkboxImg'></image>
+                </block>
+            </view>
+            <view class='listR'>
+				<view>订单号 {{item.orderCode}}</view>
+				<view>{{item.mroomName}}</view>
+				<view>{{orderSelectTime.date}} {{item.rentStartTime}}-{{item.rentEndTime}}</view>
+			</view>
+        </view>
+    </view>
+</view>
+<view class='agendaWrap'>
+    <view class='button' onTap='orderSelect' data-type='1'>
+        取消
+    </view>
+    <view class='button' onTap='orderSelect' data-type='2'>
+        保存
+    </view>
+</view>
+<view class='contentNull' a:if='{{selectTypeList.length<=0}}'>
+    <image src='../../../images/common/nullInfo.png' mode='widthFix'></image>
+    <text>暂无数据</text>
+</view>
+<block a:if='{{agendaState}}'>
+	<view class='maskBg'>
+		<view class='agendaAddWrap {{agendaState?"fadeInUp animated":""}}'>
+			<view onTap='meetingOperation' data-type='1'>日期时间相符</view>
+			<view onTap='meetingOperation' data-type='2'>相同日期订单</view>
+			<view onTap='meetingOperation' data-type='3'>取消</view>
+		</view>
+	</view>
+</block>

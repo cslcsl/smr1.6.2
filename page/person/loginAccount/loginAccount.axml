@@ -1,0 +1,26 @@
+<view class='wrapper'>
+  <view class='loginBg'>
+    <image src='../../../images/common/bg.png' mode='scaleToFill'></image>
+  </view>
+  <view class='formWrap'>
+    <view class='formList'>
+      <view>
+        <view class="picker">
+          <picker onChange="bindPickerChange" value="{{index}}" range="{{countryName}}">
+            <view class="row">
+              <label class="countryName">{{countryList[index].dialCode}}</label>
+              <label class="arrow"></label>
+            </view>
+          </picker>
+        </view>
+        <input placeholder-class='placeholder' placeholder='请输入手机号' onInput='phoneInput' type='number' value='{{mobile}}'></input>
+        <image src='../../../images/common/close.png' onTap='clearClick' data-type='1' mode='widthFix' a:if='{{mobile!=""}}'></image>
+      </view>
+      <view>
+        <input placeholder-class='placeholder' placeholder='请输入密码（6-16位）' onInput='passwordInput' type='text' password maxlength='16' minlength='6' value='{{password}}'></input>
+        <image src='../../../images/common/close.png' onTap='clearClick' data-type='2' mode='widthFix' a:if='{{password!=""}}'></image>
+      </view>
+      <view class="button {{mobile!=''&&password!=''?'confirm':''}}" onTap='loginBtn'>确定</view>
+    </view>
+  </view>
+</view>

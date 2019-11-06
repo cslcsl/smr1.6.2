@@ -1,0 +1,8 @@
+view {
+	margin:30rpx 0rpx;
+	text-align: center;
+	background: #2B7AFB;
+	height:90rpx;
+	line-height: 90rpx;
+	color:#fff;
+}

@@ -1,0 +1,7 @@
+<view class='contentNull'>
+    <image src='../../../images/common/serviceSuccess.png' mode='widthFix'></image>
+    <text>你的服务已提交成功，我们将会尽快为你处理</text>
+</view>
+<view class='buttonWrap' onTap='back'>
+    <view class='button'>返回日程</view>
+</view>

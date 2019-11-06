@@ -1,0 +1,90 @@
+page {
+    background: #f4f4f4;
+}
+
+.searchList {
+    background: #fff;
+    box-sizing: border-box;
+    margin-top: 16rpx;
+}
+
+.searchList .list {
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    color: #2d2d2d;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.searchList .listImage {
+    height: 90rpx;
+    vertical-align: middle;
+    right: 30rpx;
+    position: absolute;
+    top: 0rpx;
+}
+
+.searchList .listImage image {
+    width: 20rpx;
+}
+
+.searchList .listL {
+    width: 38rpx;
+    height: 38rpx;
+    border: 1px solid #808080;
+    border-radius: 100%;
+    margin-right: 20rpx;
+    text-align: center;
+    line-height: 38rpx;
+}
+
+.listL image {
+    width: 38rpx;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.searchList .stateTrue {
+    background: #2b7afb;
+    border: 1px solid #2b7afb;
+    color: #fff;
+}
+
+.selectMeeting {
+    margin: 30rpx 30rpx;
+    font-size: 24rpx;
+    color: #929bb6;
+}
+
+.listSelect image {
+    position: absolute;
+    right: 30rpx;
+    width: 38rpx;
+    top: 26rpx;
+}
+
+.btnList {
+    position: fixed;
+    bottom: 30rpx;
+    margin: 0rpx;
+    width: 100%;
+    padding: 0rpx 30rpx;
+    box-sizing: border-box;
+    background: #f4f4f4;
+}
+
+.wrapper {
+    padding-bottom: 150rpx;
+}
+
+.stateFalse {
+    background: #ccc;
+}
+.stateFalseR{
+	color:#666
+} 

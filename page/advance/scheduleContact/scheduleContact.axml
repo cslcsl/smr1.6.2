@@ -1,0 +1,29 @@
+
+<view class='searchTop'>
+    <view class='searchL'>
+        <image src='../../../images/common/searchIcon.png' mode='widthFix'></image>
+        <input type='text' placeholder-class='placeholder' bindconfirm='searchInput' value='{{searchTitle}}' placeholder='请输入日程名称' confirm-type='search'></input>
+    </view>
+    <view class='searchR' onTap='searchCancel'>
+        <image src='../../../images/common/close.png' mode='widthFix'></image>
+    </view>
+</view>
+<view class='searchListWrap'>
+    <view class='searchList'>
+        <view class='list' a:for='{{userList}}' onTap='userListClick' data-state='{{item.state}}' data-index='{{index}}' data-id='{{item.bookId}}'>
+            <view class='listL {{item.state?"stateTrue":""}}'>
+                <block a:if='{{item.state}}'>
+                    <image src='../../../images/common/checkbox-true.png' mode='widthFix' class='checkboxImg'></image>
+                </block>
+            </view>
+            <view class='listR'>
+                <text>{{item.meetingSubject}}</text>
+                <text>{{filters.scheduleTime(item.scheduleStartTime,0,16)}}-{{filters.scheduleTime(item.scheduleEndTime,11,16)}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='btnList'>
+    <view class='button' onTap='btnClick' data-type='1'>返回</view>
+    <view class='button' onTap='btnClick' data-type='2'>绑定</view>
+</view>

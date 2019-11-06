@@ -1,0 +1,54 @@
+
+<view class='agendaAdd' onTap='agendaAdd'>
+    新增人员
+</view>
+<!-- 添加-->
+<block a:if='{{agendaState}}'>
+    <view class='maskBg'>
+        <view class='agendaAddWrap {{agendaState?"fadeInUp animated":""}}'>
+            <view class='agendaAddTop'>
+                添加人员
+            </view>
+            <view class='addList'>
+                <view>
+                    <input placeholder-class='placeholder' placeholder='请输入姓名(必填)' onInput='nameInput' cursor-spacing='180' type='text' value='{{name}}'></input>
+                    <image src='../../../images/common/close.png' mode='widthFix' catchTap='nameInputClear'></image>
+                </view>
+                <view>
+                    <input placeholder-class='placeholder ' placeholder='请输入手机号 ' onInput='phoneInput' cursor-spacing='130' type='number'></input>
+                </view>
+                <view>
+                    <input placeholder-class='placeholder' placeholder='请输入邮箱地址' onInput='emailInput' cursor-spacing='80' type='text'></input>
+                </view>
+            </view>
+            <view class='agendaAddBottom'>
+                <view onTap='agendaCancel'>取消</view>
+                <view onTap='agendaComplete' class="{{name!=''?'green':''}}">完成</view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 列表开始 -->
+<view class='fileWrap'>
+    <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+        <view class='fileL'>
+            {{item.userName}}
+        </view>
+        <view class='fileR'>
+            <view class='inforlist'>
+                <view>
+                    <image src='../../../images/common/ico-phone.png' mode='widthFix'></image>
+                    <text>{{item.userPhone}}</text>
+                </view>
+                <view>
+                    <image src='../../../images/common/ico-mail.png' mode='widthFix'></image>
+                    <text>{{item.userMailbox}}</text>
+                </view>
+            </view>
+            <view class='delete' onTap='delItem' data-index='{{index}}' style="right:{{item.deleteRight}}rpx">
+                <image src='../../../images/common/extraDelete.png' mode='widthFix'></image>
+            </view>
+        </view>
+    </view>
+
+</view>

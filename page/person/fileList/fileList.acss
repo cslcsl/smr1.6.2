@@ -1,0 +1,244 @@
+page {
+    background: #f4f4f4;
+}
+
+/* 文件开始 */
+
+.fileWrap {
+    background: #fff;
+    padding: 0rpx 30rpx 0rpx 30rpx;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0rpx;
+}
+
+.fileList {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.fileList .fileL {
+    position: absolute;
+    left: 0rpx;
+    top: 30rpx;
+    width: 60rpx;
+}
+
+.fileList .fileL image {
+    width: 60rpx;
+}
+
+.fileL text {
+    position: absolute;
+    top: 26rpx;
+    font-size: 20rpx;
+    width: 100%;
+    display: block;
+    left: 0rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    color: #fff;
+}
+
+.fileList .fileR {
+    margin: 0rpx 0rpx 0rpx 80rpx;
+    padding: 30rpx 0rpx 24rpx 0rpx;
+}
+
+.fileList .fileR .title {
+    font-size: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+.fileList .fileR .title view:first-child {
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fileList .fileR .inforlist {
+    box-sizing: border-box;
+    margin-top: 10rpx;
+}
+
+.fileR .inforlist view:first-child {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.fileR .title view:last-child {
+    font-size: 26rpx;
+    color: #808080;
+}
+
+.fileR .inforlist text {
+    font-size: 30rpx;
+    color: #8192a7;
+}
+
+.fileAdd {
+    margin: 0rpx auto;
+    text-align: center;
+    width: 100%;
+}
+
+.fileAdd image {
+    width: 152rpx;
+    padding: 40rpx 0rpx;
+}
+
+.fileList .delete {
+    width: 150rpx;
+    height: 100%;
+    background: #f55076;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: -180rpx;
+    display: flex;
+    font-size: 32rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 左滑效果 */
+
+.order-item {
+    height: 100rpx;
+    width: 100%;
+    /* display: flex; */
+    position: relative;
+}
+
+.remove {
+    width: 160rpx;
+    height: 100%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -160rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentNull {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0rpx;
+    bottom: 0rpx;
+    padding: 0rpx 40rpx;
+    box-sizing: border-box;
+    margin: 0rpx auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentNull image {
+    width: 300rpx;
+}
+
+.contentNull text {
+    font-size: 32rpx;
+    color: #999;
+    display: block;
+}
+
+.maskBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0rpx;
+    bottom: 0rpx;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.agendaAddWrap {
+    background: #fff;
+    border-radius: 14rpx;
+    margin: 0px 4%;
+    width: 92%;
+    box-sizing: border-box;
+}
+
+.agendaAddTop {
+    padding: 33rpx 30rpx 18rpx 30rpx;
+    font-size: 36rpx;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.audioWrap .name {
+    font-size: 30rpx;
+    color: #333;
+	margin:20rpx 0rpx 40rpx 0rpx;
+}
+
+.audioWrap .pause {
+    border-top: 1px solid #e5e5e5;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    color: #2b7afb;
+}
+.sliderWrap{
+	margin:30rpx 0rpx 40rpx 0rpx;
+}

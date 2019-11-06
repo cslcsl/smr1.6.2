@@ -1,0 +1,32 @@
+
+<view class='tabList'>
+    <view a:for='{{tabList}}' onTap='tabClick' data-index='{{index}}' class='{{indexVal==index?"select":""}}' data-type='{{item.tabtype}}'>{{item.name}}</view>
+</view>
+<view class='orderWrap'>
+    <view class='orderList' a:for='{{dataList}}'>
+        <view class='orderDetail'>
+            <view class='list listL'>
+                <view class='orderNum'>订单号 {{item.orderCode}}</view>
+                <view class='orderName'>{{item.mroomName}}</view>
+                <view class='orderTime'>{{item.rentStartTime.substring(0,16)}}-{{item.rentEndTime.substring(11,16)}}</view>
+            </view>
+            <view class='list listR green'a:if='{{item.relevance==1&&indexVal==0}}'>
+				<view catchTap='contact' data-type='{{item.relevance}}' data-index='{{index}}' data-state='1'>绑定日程</view>
+				<view catchTap='contact' data-type='{{item.relevance}}' data-index='{{index}}' data-state='2'>发起会议</view>
+            </view>
+            <view class='list listR' a:elif='{{item.relevance!=1&&indexVal==0}}'>
+                已绑日程
+            </view>
+            <view class='list listR' a:elif='{{item.orderBy==3}}'>
+                已退订
+            </view>
+			<view class='list listR' a:else>
+                已结束
+            </view>
+        </view>
+    </view>
+</view>
+<view class='contentNull' a:if='{{dataList.length<=0&&dataListState}}'>
+    <image src='../../../images/common/nullInfo.png' mode='widthFix'></image>
+    <text>暂无数据</text>
+</view>

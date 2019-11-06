@@ -1,0 +1,60 @@
+<view class='imgWrapper'>
+    <view class='img'>
+        <text>完成人脸信息采集后，你可以在支持的设备上刷脸开门或使用其他应用。</text>
+        <view class='imgWrap'>
+            <image src='{{upload_picture_list}}' mode='widthFix' a:if='{{upload_picture_list!=""}}'></image>
+            <image src='../../../images/common/faceImg.png' mode='widthFix' a:else></image>
+            <view class='chooseImg' catchTap='uploadimage'>开始拍照</view>
+        </view>
+        <!-- <view class='scanBg'>
+            <image src='{{scanImg}}' mode='widthFix'></image>
+        </view> -->
+        <view class='imgList'>
+            <view>
+                <image src='../../../images/common/faceIcon1.png' mode='widthFix'></image>
+                <text>不能佩戴眼镜</text>
+            </view>
+            <view>
+                <image src='../../../images/common/faceIcon2.png' mode='widthFix'></image>
+                <text>不能遮挡脸部</text>
+            </view>
+            <view>
+                <image src='../../../images/common/faceIcon3.png' mode='widthFix'></image>
+                <text>不能仰头俯拍</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='{{cropperWrap?"cropperBlock":"cropperNone"}}'>
+    <image-cropper id="image-cropper" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" limit_move="{{limit_move}}" disable_rotate="{{disable_rotate}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" angle="{{angle}}" disable_width="{{disable_width}}"
+        max_width="{{max_width}}" max_height="{{max_height}}" disable_height="{{disable_height}}" disable_ratio="{{disable_ratio}}" disable_ratio="{{cropperWrap}}" bind:myevent="onGetCode">
+    </image-cropper>
+    <text class="hint">点击中间裁剪框可查看裁剪后的图片</text>
+    <view class='bottom'>
+        <!-- <text style='color:white;margin-right:5rpx;'>锁定裁剪框宽 </text>
+        <switch checked='{{disable_width?true:false}}' onChange="switchChangeDisableWidth" />
+        <text style='color:white;margin-right:5rpx;'>锁定裁剪框高 </text>
+        <switch checked='{{disable_height?true:false}}' onChange="switchChangeDisableHeight" /> -->
+        <button onTap='submit' class='button submitBtn'>确定</button>
+        <!-- <text style='color:white;margin-right:5rpx;'>锁定比例</text>
+        <switch checked='{{disable_ratio?true:false}}' onChange="switchChangeDisableRatio" />
+        <text></text>
+        <text style='color:white;margin-right:5rpx;'>锁定旋转 </text>
+        <switch checked='{{disable_rotate?true:false}}' onChange="switchChangeDisableRotate" />
+        <text style='color:white;margin-right:5rpx;'>限制移动 </text>
+        <switch checked='{{limit_move?true:false}}' onChange="switchChangeLimitMove" />
+        <button catchtouchstart='top' catchtouchend='end' data-type="top">上</button>
+        <button catchtouchstart='bottom' catchtouchend='end' data-type="bottom">下</button>
+        <button catchtouchstart='left' catchtouchend='end' data-type="left">左</button>
+        <button catchtouchstart='right' catchtouchend='end' data-type="right">右</button>
+        <button catchtouchstart='enlarge' catchtouchend='end' data-type="enlarge">放大</button>
+        <button catchtouchstart='narrow' catchtouchend='end' data-type="narrow">缩小</button>
+        <button catchtouchstart='rotate' catchtouchend='end' data-type="rotate">旋转</button>
+        <button catchTap='upload'>上传</button> -->
+    </view>
+</view>
+<view class='buttonWrap'>
+    <view class='button' onTap='faceRegister' a:if='{{imgBase64}}'>开始采集</view>
+    <view class='button buttonGray' a:else>开始采集</view>
+</view>
+<!-- <view bind:myevent="onGetCode"></view> -->

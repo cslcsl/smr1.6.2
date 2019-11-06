@@ -1,0 +1,88 @@
+
+<view class='positionTop'>
+    <view class='searchWrap'>
+        <view class='searchL'>
+            <image src='../../../images/common/searchIcon.png' mode='widthFix'></image>
+            <view class="input {{mroomName==''?'placeholder':''}}" onTap='nameInputConfirm'>
+                <block a:if="{{mroomName!=''}}">{{mroomName}}</block>
+                <block a:else>请输入会议室名称</block>
+            </view>
+        </view>
+        <view class='searchR'>
+            <navigator url='../conditionFilter/conditionFilter?fromType={{fromType}}&mroomName={{mroomName}}&type={{type}}&bookId={{bookId}}&date={{selectDate}}'>
+                <image src='../../../images/common/ico-shaixuan2.png' mode='widthFix' a:if='{{searchContent}}'></image>
+                <image src='../../../images/common/ico-shaixuan.png' mode='widthFix' a:else></image>
+            </navigator>
+        </view>
+    </view>
+    <view class='searchSelectTime'>选定预订时间：{{selectDate}}
+        <block a:if='{{searchContentState}}'>{{filters.toSubsting(searchList2.startTime,11,16)}}-{{filters.toSubsting(searchList2.endTime,11,16)}}</block>
+    </view>
+</view>
+<block a:if='{{dataList.length>0}}'>
+    <view class='roomWrap {{fromType==2?"orderSelectState":""}}'>
+        <view class='roomList' a:for='{{dataList}}'>
+            <view class='roomInfo'>
+                <view class='imageInfo'>
+                    <image src='{{item.meetingPic}}' mode='scaleToFill' a:if='{{item.meetingPic!=""&&item.meetingPic!=null}}' lazy-load='true'></image>
+                    <image src='../../../images/common/roomPic.png' mode='scaleToFill' a:else></image>
+                    <view class='textList'>
+                        <view class='titlePrice'>
+                            <text class='title'>{{item.mroomName}}</text>
+
+                        </view>
+                        <view class='address' a:if='{{item.projectName!=null}}'>{{item.projectName}}</view>
+                    </view>
+                </view>
+                <view class='labelList'>
+                    <block a:for='{{item.devicList}}' a:for-item='item1' a:if='{{item.devicList.length>0}}'>
+                        <text>{{item1.equipmentName}}</text>
+                    </block>
+                </view>
+            </view>
+            <view class='roomTimeList'>
+                <view class='scaleScollView'>
+                    <scroll-view scroll-x class='scaleScrollCon' scroll-into-view='{{scrollId}}' a:if='{{!searchContentState}}'>
+                        <view class='scaleList clearfix'>
+                            <view a:for='{{item.timeList}}' a:for-item='item2' a:for-index="index2" class='scaleStatus scaleStatus{{item2.statusVal}}' onTap='scaleListClick' data-status='{{item2.statusVal}}' data-index='{{index2}}' data-indexf='{{index}}' data-valueBeginVal='{{item2.valueBeginVal}}'
+                                data-valueEndVal='{{item2.valueEndVal}}' id='scaleScrollId{{index2}}'>
+                                <block a:if='{{index2%2==0}}'>
+                                    <view class='value'>{{item2.valueBeginVal}}</view>
+                                </block>
+                                <view class='line'></view>
+                                <view class='bg'></view>
+                            </view>
+                            <view class='scaleStatus'>
+                                <view class='line'></view>
+                                <view class='bg'></view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                    <block a:if='{{item.selectTimeList.length!=0}}'>
+                        <view class='scaleSeletValue'>{{item.selectTimeList.begin}}-{{item.selectTimeList.end}}共{{item.selectTimeList.hour}}个小时
+                            <block a:if='{{item.selectTimeList.min!=0}}'>{{item.selectTimeList.min}}分钟</block>
+                        </view>
+                        <block a:if='{{fromType=="2"}}'>
+                            <view class='confirmBtn' onTap='confirmBtn' data-index='{{index}}' data-id='{{item.mroomId}}' data-type='1'>确认预订</view>
+                        </block>
+                        <block a:else>
+                            <view class='confirmBtnList'>
+                                <view class='confirmBtn' onTap='confirmBtn' data-index='{{index}}' data-id='{{item.mroomId}}' data-type='2'>只订会议室</view>
+                                <view class='confirmBtn' onTap='confirmBtn' data-index='{{index}}' data-id='{{item.mroomId}}' data-type='3'>发起会议</view>
+                            </view>
+                        </block>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view class="orderSelectWrap"  a:if='{{fromType==2}}'>
+		<view class="orderSelect button" onTap="orderSelect">从已预订的会议室中选择</view>
+	</view>
+<block a:if='{{dataList.length==0&&dataListState}}'>
+    <view class='contentNull'>
+        <image src='../../../images/common/nullInfo.png' mode='widthFix'></image>
+        <text>暂无相关数据</text>
+    </view>
+</block>

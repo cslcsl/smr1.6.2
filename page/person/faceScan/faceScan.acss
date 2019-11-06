@@ -1,0 +1,156 @@
+.img {
+    margin: 30rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0px 5rpx 10rpx 0px rgba(0, 0, 0, 0.08);
+}
+
+.img image {
+    width: 250rpx;
+    height: 250rpx;
+}
+
+.imgWrap {
+    width: 250rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    position: relative;
+    border: 1px dashed #ccc;
+}
+
+.imgWrap .chooseImg {
+    position: absolute;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    bottom: 0rpx;
+    width: 100%;
+}
+
+.imgWrap image {
+    /* padding: 20rpx; */
+}
+
+.imgList view {
+    width: 33.3%;
+    margin: 40rpx 0rpx;
+    display: inline-block;
+}
+
+.imgList image {
+    width: 120rpx;
+}
+
+.imgList text {
+    font-size: 30rpx;
+    padding: 0rpx !important;
+}
+
+.buttonGray {
+    background: #ccc;
+    color: #fff;
+}
+
+.img text {
+    font-size: 30rpx;
+    color: #464646;
+    padding: 40rpx 30rpx;
+    line-height: 1.5;
+    display: block;
+}
+
+.buttonWrap {
+    left: 30rpx;
+    right: 30rpx;
+    position: fixed;
+    bottom: 40rpx;
+}
+
+.top {
+    position: absolute;
+    width: 100%;
+    top: 10rpx;
+    display: flex;
+    flex-flow: wrap;
+    z-index: 10;
+    color: white;
+    justify-content: space-around;
+}
+
+.hint {
+    position: absolute;
+    top: 10rpx;
+    width: 100%;
+    font-size: 24rpx;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+page {
+    background: #f4f4f4;
+}
+
+view {
+    font-size: 30rpx;
+}
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 40rpx;
+    display: flex;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* height: 210rpx; */
+}
+
+button {
+    font-size: 27rpx;
+    z-index: 2;
+    padding: 0 20rpx;
+    height: 60rpx;
+    min-width: 70rpx;
+    margin: 0 4rpx;
+}
+
+.input {
+    display: flex;
+    height: 50rpx;
+    width: 50%;
+}
+
+.input>.label {
+    min-width: 150rpx;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.input>input {
+    margin-left: 10rpx;
+    text-align: center;
+    max-width: 160rpx;
+    border: 1px solid rgb(255, 255, 255);
+    height: 50rpx;
+    line-height: 50rpx;
+    min-height: 50rpx;
+    box-sizing: border-box;
+}
+
+.submitBtn {
+    margin: 0rpx 40rpx;
+}
+
+.cropperBlock {
+    display: block;
+}
+
+.cropperNone {
+    display: none;
+}

@@ -1,0 +1,123 @@
+page {
+    background: #f4f4f4;
+}
+
+.personWrap {
+    margin: 16rpx 0rpx 0rpx 0rpx;
+    padding: 0rpx 0rpx 0rpx 20rpx;
+    background: #fff;
+}
+
+.personList {
+    height: 110rpx;
+    line-height: 110rpx;
+    position: relative;
+}
+
+.personList image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+    position: absolute;
+    left: 0rpx;
+    top: 20rpx;
+}
+
+.personList view:last-child {
+    font-size: 32rpx;
+    color: #464646;
+    padding-left: 100rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+.personList view:last-child text {
+    float: left;
+}
+
+.personList .label {
+    width: 100rpx;
+    line-height: 38rpx;
+    height: 38rpx;
+    font-size: 20rpx;
+    margin-left: 16rpx;
+    margin-top: 36rpx;
+    display: inline-block;
+    text-align: center;
+    border-radius: 19rpx;
+}
+
+.personList .label1 {
+    color: #666;
+    background: rgba(236, 236, 236, 1);
+}
+
+.personList .label2 {
+    color: #2b7afb;
+    background: rgba(43, 122, 251, 0.2);
+}
+
+.personList .label3 {
+    color: #5dc3a0;
+    background: rgba(93, 195, 160, 0.2);
+}
+
+.join0 {
+    font-size: 30rpx;
+    text-align: right;
+    color: #f55076;
+    display: inline-block;
+    position: absolute;
+    right: 30rpx;
+    top: 0rpx;
+}
+
+.join1 {
+    font-size: 30rpx;
+    text-align: right;
+    color: #2b7afb;
+    display: inline-block;
+    position: absolute;
+    right: 30rpx;
+    top: 0rpx;
+}
+
+.name {
+    max-width: 40%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.roleName {
+    float: right !important;
+    margin-right: 30rpx;
+    color: #a2b3c7;
+}
+
+.roleName1 {
+    color: #2b7afb;
+}
+
+.editButton {
+    position: absolute;
+    padding: 40rpx;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0rpx;
+    background: #f4f4f4;
+}
+
+.editButton view {
+    background: #2b7afb;
+    height: 94rpx;
+    line-height: 94rpx;
+    border-radius: 8rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 34rpx;
+}

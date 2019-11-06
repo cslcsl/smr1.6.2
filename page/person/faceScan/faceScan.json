@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+	"defaultTitle": "人脸采集",
+	"disableScroll": true,
+	"usingComponents": {
+		"image-cropper": "../image-cropper/image-cropper"
+	}
+}

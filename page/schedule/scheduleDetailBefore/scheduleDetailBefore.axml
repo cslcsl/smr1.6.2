@@ -1,0 +1,320 @@
+
+<block a:if='{{tabType==6}}'>
+    <view class='tabList'>
+        <view a:for='{{tabList}}' onTap='tabClick' data-type='{{index}}' class='{{tabType==index?"select":""}}'>{{item.name}}</view>
+    </view>
+</block>
+<block a:if='{{tabType==0}}'>
+    <view class='detailWrap'>
+        <view class='detailList'>
+            <view class='list'>
+                <view>会议类型</view>
+                <view>
+                    <block a:if='{{detailList.meetingTypeName==1}}'>
+                        线下会议
+                    </block>
+                    <block a:elif='{{detailList.meetingTypeName==2}}'>
+                        视频会议
+                    </block>
+                    <block a:else>
+                        电话会议
+                    </block>
+                </view>
+            </view>
+            <view class='list'>
+                <view>会议主题</view>
+                <view>{{detailList.meetingSubject}}</view>
+            </view>
+            <view class='list'>
+                <view>预订人</view>
+                <view>{{detailList.userName}}</view>
+            </view>
+            <view class='list'>
+                <view>开始时间</view>
+                <view>{{detailList.scheduleStartTime}}</view>
+            </view>
+            <view class='list'>
+                <view>结束时间</view>
+                <view>{{detailList.scheduleEndTime}}</view>
+            </view>
+            <view class='list'>
+                <view>地点</view>
+                <view onTap='meetingAddress'>
+                    <text a:if='{{meetingAddressList.length>0}}'> <block a:for='{{meetingAddressList}}'>{{item.mroomName}}<block a:if='{{index+1!=meetingAddressList.length&&meetingAddressList.length>0}}'>、</block></block></text>
+                    <text a:else class='placeholder'>暂无地点</text>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+        </view>
+        <view class='detailList marginTop'>
+            <view class='list'>
+                <view>参会人</view>
+                <view>{{detailList.externalStaff.confirmMeetingCount}}/{{detailList.externalStaff.meetingCount}}确认参加</view>
+            </view>
+            <view class='list'>
+                <view>确认参加</view>
+                <block a:if='{{detailList.externalStaff.externalStaff.confirmMeeting.length>0}}'>
+                    <view onTap='personList' data-type='4'>
+                        <text><block a:for='{{detailList.externalStaff.externalStaff.confirmMeeting}}'>{{item.userName}}<block a:if='{{index+1!=detailList.externalStaff.externalStaff.confirmMeeting.length}}'>、</block></block>	
+						</text>
+                        <image mode='widthFix' src='../../../images/common/rightArrow.png'></image>
+                    </view>
+                </block>
+                <view a:else>0人</view>
+            </view>
+            <view class='list'>
+                <view>不参加</view>
+                <block a:if='{{detailList.externalStaff.externalStaff.noMeeting.length>0}}'>
+                    <view onTap='personList' data-type='5'>
+                        <text><block a:for='{{detailList.externalStaff.externalStaff.noMeeting}}'>{{item.userName}}<block a:if='{{index+1!=detailList.externalStaff.externalStaff.noMeeting.length}}'>、</block></block>				
+						</text>
+                        <image mode='widthFix' src='../../../images/common/rightArrow.png'></image>
+                    </view>
+                </block>
+                <view a:else>0人</view>
+            </view>
+            <view class='list'>
+                <view>未确定</view>
+                <block a:if='{{detailList.externalStaff.externalStaff.unconfirmedMeeting.length>0}}'>
+                    <view onTap='personList' data-type='6'>
+                        <text><block a:for='{{detailList.externalStaff.externalStaff.unconfirmedMeeting}}'>{{item.userName}}<block a:if='{{index+1!=detailList.externalStaff.externalStaff.unconfirmedMeeting.length}}'>、</block></block></text>
+                        <image mode='widthFix' src='../../../images/common/rightArrow.png'></image>
+                    </view>
+                </block>
+                <view a:else>0人</view>
+            </view>
+            <view class='list'>
+                <view>外部人员</view>
+                <view>{{detailList.externalStaff.externalUserInfo.unconfirmedMeeting.length}}人</view>
+            </view>
+            <view class='list'>
+                <view>会议主持人</view>
+                <view>
+                    <block a:if='{{detailList.hostUser.length>0}}'>
+                        {{detailList.hostUser[0].userName}}
+                    </block>
+                    <block a:else>无</block>
+                </view>
+            </view>
+            <view class='list'>
+                <view>会议纪要人</view>
+                <view>
+                    <block a:if='{{detailList.summaryUser.length>0}}'>
+                        {{detailList.summaryUser[0].userName}}
+                    </block>
+                    <block a:else>无</block>
+                </view>
+            </view>
+            <view class='list'>
+                <view>会前提醒</view>
+                <view>
+                    <block a:if='{{detailList.isMeetingRemind==1}}'>
+                        提前15分钟
+                    </block>
+                    <block a:else>
+                        提前30分钟
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class='detailList marginTop'>
+            <view class='list'>
+                <view>会议签到</view>
+                <view a:if='{{detailList.isMeetingSign==1}}' onTap='webBreak' data-url='../scanCode/scanCode?id={{bookId}}' class='scan'>查看</view>
+                <view a:else>否</view>
+            </view>
+        </view>
+    </view>
+    <block a:if='{{operationType==1||operationType==4}}'>
+        <view class='btnList btnList1'>
+            <view onTap='meetingOperation' data-type='2'>取消</view>
+            <view onTap='meetingOperation' data-type='1'>修改</view>
+        </view>
+    </block>
+    <block a:if='{{operationType==2}}'>
+        <view a:if='{{detailList.scheduleStatus==4}}'>
+            <!-- <view onTap='meetingOperation' data-type='6'>会议延时</view> -->
+        </view>
+        <view class='btnList btnList1' a:else>
+            <view onTap='meetingOperation' data-type='5'>提前结束</view>
+            <view onTap='meetingOperation' data-type='6'>会议延时</view>
+        </view>
+    </block>
+    <block a:if='{{operationType==3||operationType==4}}'>
+        <view class='btnList btnList1 btnList3 {{operationType==4?"btnList4":""}}'>
+            <view onTap='meetingOperation' data-type='4'>不参加</view>
+            <view onTap='meetingOperation' data-type='3'>确认参加</view>
+        </view>
+    </block>
+    <block a:if="{{detailList.scheduleStatus==4&&operationType==2}}">
+        <view class='btnList btnEnd'>
+            <view>已结束</view>
+        </view>
+    </block>
+
+</block>
+<!-- 议程开始 -->
+<block a:if='{{tabType==1||tabType==4}}'>
+    <view class='agendaWrap2'>
+        <view class='agendaWrap {{tabType==4?"agendaWrapNull":""}}'>
+            <view class='agendaList'>
+                <view class='list' a:for='{{meetingProcessList}}'>
+                    <view class='listTop'>
+                        <view>会议议程{{index+1}}</view>
+                        <view onTap='agendaDelete' data-id='{{item.processId}}' data-index='{{index}}'>
+                            <image src='../../../images/common/agendaDelete.png' mode='widthFix'></image>
+                        </view>
+                    </view>
+                    <view class='listInfo'>
+                        <view>主题</view>
+                        <view>{{item.title}}</view>
+                    </view>
+                    <view class='listInfo'>
+                        <view>发言人</view>
+                        <view>{{item.userName}}</view>
+                    </view>
+                    <view class='listInfo'>
+                        <view>发言时间</view>
+                        <view>{{item.duration}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block a:if='{{(tabType==1||tabType==4)&&scheduleStatus==1}}'>
+        <view class='agendaAddBtnWrap'>
+            <view class='agendaAddBtn' onTap='agendaAdd'>
+                新增议程
+            </view>
+        </view>
+    </block>
+    <!-- 添加议程 -->
+    <block a:if='{{agendaState}}'>
+        <view class='maskBg'>
+            <view class='agendaAddWrap {{agendaState?"fadeInUp animated":""}}'>
+                <view class='agendaAddTop'>
+                    <view>添加会议议程</view>
+                </view>
+                <view class='addList'>
+                    <view>
+                        <textarea placeholder-class='placeholder' placeholder='请输入主题 最多20个字符(必填)' onInput='titleInput' maxlength='20' cursor-spacing='180' fixed></textarea>
+                    </view>
+                    <view>
+                        <input placeholder-class='placeholder' placeholder='请输入议程发言人(必填)' onInput='nameInput' cursor-spacing='130' type='text' value='{{agendaAddName}}'></input>
+                        <image src='../../../images/common/close.png' mode='widthFix' catchTap='agendaAddNameClear' a:if='{{agendaAddName!=""}}'></image>
+                    </view>
+                    <view>
+                        <input placeholder-class='placeholder' placeholder='请输入发言时间(必填)' onInput='timeInput' cursor-spacing='80' type='number' value='{{agendaAddTime}}'></input>
+                        <image src='../../../images/common/close.png' mode='widthFix' catchTap='timeInputClear' a:if='{{agendaAddTime!=""}}'></image>
+                        <text>分钟</text>
+                    </view>
+                </view>
+                <view class='agendaAddBottom'>
+                    <view onTap='agendaCancel'>取消</view>
+                    <view onTap='agendaComplete' class="{{agendaAddTitle!=''&&agendaAddTime!=''&&agendaAddName!=''?'green':''}}">保存</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</block>
+<!-- 文件开始 -->
+<block a:if='{{tabType==2}}'>
+    <view class='fileWrap'>
+        <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}' a:if='{{fileType==1}}'>
+            <view class='fileL'>
+                <image src='../../../images/common/JPG.png' mode='widthFix'></image>
+                <text>{{item.type}}
+				</text>
+            </view>
+            <view class='fileR'>
+                <view onTap='openFile' data-id='{{item.bookId}}' data-url='{{item.attachmentUrl}}' data-type='{{item.type}}'>
+                    <view class='title'>
+                        <view>{{item.attachmentName}}</view>
+						<view a:if='{{filters.stringState(item.attachmentSize)}}'>{{item.attachmentSize}}</view>
+							<view a:else>{{filters.tokb(item.attachmentSize)}}KB</view>
+                    </view>
+                    <view class='inforlist'>
+                        <view>
+                            <block a:if="{{item.userName!=null}}">{{item.userName}} </block>
+                            <text>{{item.updateTime}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='delete' onTap='fileDelete' data-userid='{{item.userId}}' data-id='{{item.id}}' data-index='{{index}}' data-type='1'>删除</view>
+            </view>
+        </view>
+		<view class='fileList' a:for='{{fileList2}}' bindtouchstart="drawStart1" bindtouchmove="drawMove1" bindtouchend="drawEnd1" style="right:{{item.right}}rpx" data-index='{{index}}' a:if='{{fileType==2}}'>
+            <view class='fileL'>
+                <image src='../../../images/common/JPG.png' mode='widthFix'></image>
+                <text>{{item.type}}
+				</text>
+            </view>
+            <view class='fileR'>
+                <view onTap='clickFile' data-id='{{item.bookId}}' data-url='{{item.attachmentUrl}}' data-type='{{item.type}}' data-index='{{index}}'>
+                    <view class='title'>
+                        <view>{{item.fileName}}</view>
+                        <view>{{filters.tokb(item.fileSize)}}KB</view>
+                    </view>
+                    <view class='inforlist'>
+                        <view>
+                            <block a:if="{{item.userName!=null}}">{{item.userName}} </block>
+                            <text>{{item.createTime}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='delete' onTap='fileDelete' data-userid='{{item.userId}}' data-id='{{item.id}}' data-index='{{index}}' data-type='2'>删除</view>
+            </view>
+        </view>
+        <block a:if='{{detailList.earlyStatus!=3}}'>
+            <view class='fileAdd' onTap='addFile'>
+                <image src='../../../images/common/addfFile.png' mode='widthFix'></image>
+            </view>
+        </block>
+    </view>
+</block>
+<!-- 动态开始 -->
+<block a:if='{{tabType==3}}'>
+    <view class='dynamicWrap'>
+        <view class='dynamicList'>
+            <view class='list' a:for='{{dynamicList}}'>
+                <view class='listL'>
+                </view>
+                <view class='listR'>
+                    <view class='time'>{{item.updateTime}}</view>
+                    <view class='infor'>
+                        <block a:if='{{item.type==4}}'>
+                            {{filters.fileContent(item.content,1)}}
+                            <text class='fileText' onTap='openFile' data-id='{{item.bookId}}' data-url='{{item.fileUrl}}' data-type='{{item.filetype}}'>{{filters.fileContent(item.content,2)}}</text>
+                        </block>
+                        <block a:else>
+                            {{item.content}}
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view class='contentNull' a:if='{{dataList.length<=0&&dataListState}}'>
+    <image src='../../../images/common/contentNull.png' mode='widthFix'></image>
+    <text>暂无数据</text>
+</view>
+<block a:if='{{agendaState2}}'>
+    <view class='maskBg2 audioWrap'>
+        <view class='audioAddWrap {{agendaState2?"fadeInUp animated":""}}'>
+            <view class='audioAddTop'>
+                <view>当前播放</view>
+            </view>
+            <view class='addList'>
+                <audio action="{{action}}" src="{{src}}" id="myAudio" controls style='margin:40rpx 0rpx;display:none;' bindtimeupdate="musicStart" bindplay='audioPlay' ></audio>
+                <view class='name'>{{fileList[index].fileName}}</view>
+				<view class="sliderWrap">
+					<slider onChange="slider4change" step="1" min="0" max="{{duration}}" value="{{currentTime}}" bindchanging='sliderChangeing' block-color="#fff" activeColor='#2b7afb'/>
+				</view>
+            </view>
+            <view class=''>
+                <view onTap='audioPause' class='pause'>停止播放</view>
+            </view>
+        </view>
+    </view>
+</block>

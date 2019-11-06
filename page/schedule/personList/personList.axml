@@ -1,0 +1,20 @@
+<view class='personWrap'>
+    <view class='personList' a:for='{{list}}'>
+        <view>
+            <image mode='scaleToFill' src='../../../images/common/advar.png' a:if='{{item.pictureUrl==null||item.pictureUrl==""}}'></image>
+            <image mode='scaleToFill' src='{{item.pictureUrl}}' a:else></image>
+        </view>
+        <view a:if='{{type==4||type==5||type==6}}'>
+            <text class='name'>{{item.userName}}</text>
+            <text a:if="{{item.exter==1}}" class='label label1'>外部</text>
+            <text a:if="{{item.hoster==1}}" class='label label2'>主持</text>
+            <text a:if="{{item.summary==1}}" class='label label3'>纪要</text>
+            <text a:if="{{item.join==2}}" class='join0'>不参加</text>
+            <text a:if="{{item.join==1}}" class='join1'>参加</text>
+        </view>
+        <view a:else>{{item.name}}</view>
+    </view>
+</view>
+<view class="editButton" onTap="editClick" a:if='{{type==6&&bookId!=""&&scheduleStatus!=0}}'>
+    <view>修改</view>
+</view>

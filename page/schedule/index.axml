@@ -1,0 +1,143 @@
+<view onTap='wrapperClick'>
+    <view class='container'>
+        <view class='month flex m-around datem-around'>
+            <view class='arrow scanImg' onTap='scanCode'>
+                <image mode='widthFix' src='../../images/common/advanceIcon1.png'></image>
+            </view>
+            <view class='year-and-month'>
+                <view class="picker" onTap="bindDateChange">
+                    <view>{{year}}年{{month}}月</view>
+                </view>
+            </view>
+            <view class='statusListWrap'>
+                <view class='statusView' catchTap='statusView'>
+                    <view a:if="{{status==0}}">我参与的</view>
+                    <view a:else>全部</view>
+                    <view>
+                        <image mode='widthFix' src='../../images/common/rightArrow.png' class='{{statusState?"":"statusImg"}}'></image>
+                    </view>
+                </view>
+                <view class='statusList {{statusState?"fadeInUp animated":"statusListNone"}}'>
+                    <view class='statusArrow'>
+                        <image src='../../images/common/statusArrow.png' mode='widthFix'></image>
+                    </view>
+                    <view class='list'>
+                        <view catchTap='statusClick' data-type='0'>
+                            <label class='{{status==0?"select":""}}'>我参与的</label>
+                            <image class="statusArrowImg" src='../../images/common/iconDelay.png' mode='widthFix' a:if='{{status==0}}'></image>
+                        </view>
+                        <view catchTap='statusClick' data-type='1'>
+                            <label class='{{status==1?"select":""}}'>全部</label>
+                            <image class="statusArrowImg" src='../../images/common/iconDelay.png' mode='widthFix' a:if='{{status==1}}'></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='calendar flex column s-center'>
+            <view class='week-row flex m-around'>
+                <view class='grid' a:for="{{week}}" a:key='item'>{{item}}</view>
+            </view>
+            <block a:if="{{caldenlarWeek}}">
+                <swiper class='swpier-box' current="{{swiperWeekIndex}}" style="height:{{swiperHeight}}px">
+                    <swiper-item class='flex m-around days-table weekcalendar' a:for='{{calendar.weeklist}}' a:for-index='weekindex' a:for-item='weekItem'>
+                        <view a:for="{{weekItem}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap' data-type='1'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                            <view class='dot' a:if='{{x.state}}'></view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </block>
+            <block a:else>
+                <swiper class='swpier-box' current="{{swiperIndex}}" circular='true' onChange='swiperChange' style="height:{{swiperHeight}}px">
+                    <swiper-item class='flex m-around days-table '>
+                        <view a:for="{{calendar.first}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                            <view class='dot' a:if='{{x.state}}'></view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class='flex m-around days-table '>
+                        <view a:for="{{calendar.second}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                            <view class='dot' a:if='{{x.state}}'></view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class='flex m-around days-table'>
+                        <view a:for="{{calendar.third}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                            <view class='dot' a:if='{{x.state}}'></view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class='flex m-around days-table '>
+                        <view a:for="{{calendar.fourth}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                            <view class='dot' a:if='{{x.state}}'>
+                            </view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </block>
+            <view class='calendarArrow {{caldenlarWeek?"":"calendarTransform"}}' catchTap='calendarTransform' data-state='{{caldenlarWeek}}'>
+                <image src='../../images/common/calendarArrow.png' mode='widthFix'></image>
+            </view>
+        </view>
+    </view>
+    <view class='scheduleList'>
+        <scroll-view scroll-y class='scrollCity' style="height: {{swiperScheduleHeight}}px;" scroll-into-view="{{swiperScheduleIndex}}" a:if='{{scheduleList.length>0}}' onScrollToUpper='bindscrollTop' onScrollToLower='bindscrollBottom' onScroll='scheduleScroll'>
+            <view class='scheduleWrap' a:for='{{scheduleList}}' a:for-item='scheduleParItem' a:for-index='scheduleParIndex' id='date{{scheduleParItem.date}}'>
+                <view class='time'>
+                    <view>{{scheduleParItem.date.substring(4, 6)}}.{{scheduleParItem.date.substring(6, 9)}}</view>
+                    <label></label></view>
+                <view class='scheduleCon' onTap='scheduleDetail' data-id='{{scheduleItem.bookId}}' a:for='{{scheduleParItem.list}}' a:for-item='scheduleItem' a:for-index='scheduleIndex'>
+                    <view class='content scheduleStatus{{scheduleItem.scheduleStatus}}'>
+                        <view class='scheduleConL'>{{scheduleItem.scheduleStartTime.substring(11, 16)}} - {{scheduleItem.scheduleEndTime.substring(11, 16)}}
+                            <block a:if='{{scheduleItem.overlap}}'>
+                                <image mode='widthFix' src='../../images/common/conflictIcon.png'></image></block></view>
+                        <view class='scheduleConR'>
+                            <view class='subjectName'>
+                                <view>{{scheduleItem.meetingSubject}}</view>
+                                <view>{{scheduleItem.userName}}</view></view>
+                            <view class='mroomAddress'>
+                                <block a:if='{{scheduleItem.mroomAddress!=null}}'>
+                                    <view>会议室：{{scheduleItem.mroomName}}</view>
+                                    <view>{{scheduleItem.mroomAddress}}</view></block>
+                                <view a:else>未添加地址</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class='contentNull' a:else>
+            <image src='../../images/common/nullMeeting.png' mode='widthFix'></image>
+            <label>太轻松了，没有日程呢！</label>
+        </view>
+    </view>
+    <view class='scheduleAdd' catchTap='serviceClick' data-type='1'>
+        <image src='../../images/common/add.png' mode='widthFix'></image>
+    </view>
+</view>
+<block a:if='{{alertState}}'>
+    <view class='maskBg' catchTap='maskBgHidden'>
+        <view class='alertWrap {{alertState?"fadeInUp ":" "}}'>
+            <view catchTap='serviceClick' data-type='2'>
+                <label>服务</label>
+                <image src='../../images/common/scheduleIcon1.png' mode='widthFix'></image>
+            </view>
+            <view catchTap='serviceClick' data-type='1'>
+                <label>日程</label>
+                <image src='../../images/common/scheduleIcon2.png' mode='widthFix'></image>
+            </view>
+        </view>
+    </view>
+</block>
+<template name="templateWeek">
+    <swiper-item class='flex m-around days-table weekcalendar' a:for='{{weeklist}}' a:for-item='weeekitem' a:for-index='weekindex' a:key='weekindex'>
+        <view a:for="{{weeekitem}}" a:for-item='x' a:key='x.date' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap' data-type='1'>
+            <!--<view>{{x.date === today?'今天':x.day}}</view><view class='dot' a:if='{{x.state}}'></view> -->
+            <view>{{weeklist[0][0].date}}</view>
+        </view>
+        <!--<template is="templateWeek" data="{{...weeekitem}}"></template> -->
+        <!--<view>{{weeklist[0][0].date}}</view> -->
+    </swiper-item>
+</template>

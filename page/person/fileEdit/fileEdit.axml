@@ -1,0 +1,3 @@
+<view onTap="uploadimage">上传图片</view>
+<view onTap="uploadVideo">上传视频</view>
+<view onTap="uploadFile">上传会话文件</view>

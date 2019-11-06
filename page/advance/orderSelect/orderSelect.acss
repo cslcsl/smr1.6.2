@@ -1,0 +1,264 @@
+.searchTop {
+    background: #f4f4f4;
+    padding: 0rpx 30rpx;
+    box-sizing: border-box;
+    position: relative;
+    color: #464646;
+    font-size: 30rpx;
+}
+
+.searchListWrap {
+    padding-bottom: 120rpx;
+}
+
+page {
+    background: #f4f4f4;
+}
+
+.searchTop image {
+    width: 20rpx;
+}
+
+.searchL {
+    border-radius: 8rpx;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.searchR {
+    position: absolute;
+    right: 30rpx;
+    font-size: 32rpx;
+    top: 0rpx;
+    line-height: 80rpx;
+}
+
+.searchResult {
+    position: fixed;
+    bottom: 0rpx;
+    background: #fff;
+    height: 98rpx;
+    line-height: 98rpx;
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+.searchResult view {
+    display: inline-block;
+}
+
+.searchResult view:first-child {
+    padding-left: 30rpx;
+    width: 60%;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    color: #464646;
+}
+
+.searchResult view:last-child {
+    width: 40%;
+    background: #2b7afb;
+    font-size: 34rpx;
+    color: #fff;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.searchBt {
+    margin: 0rpx 30rpx 16rpx 30rpx;
+    font-size: 24rpx;
+    color: #333;
+    display: inline-block;
+}
+
+.searchBt view {
+    width: auto;
+    display: inline-block;
+}
+
+.searchBt image {
+    width: 16rpx;
+    margin: 0rpx 12rpx 0rpx 0rpx;
+	vertical-align:middle;
+}
+.searchBt view:first-child{
+	color:#929bb6;
+}
+.searchList {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.searchList .listR text {
+    display: inline-block;
+    width: 38rpx;
+    height: 38rpx;
+    background: #ccc;
+    margin-right: 20rpx;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.searchList .list {
+    /* height: 90rpx;
+    line-height: 90rpx; */
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    color: #2d2d2d;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.searchList .listImage {
+    height: 90rpx;
+    vertical-align: middle;
+    right: 30rpx;
+    position: absolute;
+    top: 0rpx;
+}
+
+.searchList .listImage image {
+    width: 20rpx;
+}
+
+.searchList .listL {
+    width: 38rpx;
+    height: 38rpx;
+    border: 1px solid #808080;
+    border-radius: 100%;
+    margin-right: 20rpx;
+    text-align: center;
+    line-height: 38rpx;
+}
+
+.searchList .stateTrue {
+    background: #2b7afb;
+    border: 1px solid #2b7afb;
+    color: #fff;
+}
+
+.head-title {
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.item {
+    display: block;
+    margin: 20px 0 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.ps {
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #666;
+    font-size: 24rpx;
+}
+.agendaWrap {
+    position: fixed;
+    bottom: 30rpx;
+    width: 100%;
+}
+
+.agendaWrap view:first-child {
+    color: #2b7afb;
+    background: #fff;
+    border: 1px solid #2b7afb;
+}
+
+.agendaWrap view {
+    width: 44% !important;
+    display: inline-block;
+    margin: 0rpx 0rpx 0rpx 4%;
+}
+.listR view:nth-child(1){
+	font-size: 24rpx;
+	color:#8192A7;
+	padding:30rpx 0rpx 5rpx 0rpx;
+}
+.listR view:nth-child(2){
+	font-size: 36rpx;
+	color:#333;
+	padding:0rpx 0rpx 10rpx 0rpx;
+}
+.listR view:nth-child(3){
+	font-size: 28rpx;
+	color:#666;
+	padding:0rpx 0rpx 30rpx 0rpx;
+}
+.maskBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    top: 0rpx;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.agendaAddWrap {
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.agendaAddWrap view {
+    font-size: 36rpx;
+    color: #333;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}

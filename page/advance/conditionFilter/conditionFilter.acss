@@ -1,0 +1,140 @@
+page {
+    background: #f4f4f4;
+}
+
+.listTitle {
+    color: #929bb6;
+    font-size: 24rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    padding: 0rpx 30rpx;
+    box-sizing: border-box;
+}
+
+.filterList {
+    padding-bottom: 180rpx;
+}
+
+.filterList .list {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding: 0rpx 0rpx 0rpx 30rpx;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    color: #808080;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.filterList .list view:first-child {
+    min-width: 150rpx !important;
+}
+
+.filterList .list view:last-child {
+    min-width: 200rpx;
+    text-align: left;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 90rpx;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filterList .list view view {
+    margin-right: 0rpx !important;
+}
+
+.filterList .list image {
+    width: 17rpx;
+    height: 90rpx;
+    vertical-align: middle;
+    margin-left: 10rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 35rpx;
+}
+
+.filterList .list text {
+    color: #2d2d2d;
+}
+
+.filterList input, .filterList picker {
+    height: 90rpx !important;
+    line-height: 90rpx;
+    display: inline-block;
+    color: #2d2d2d;
+    text-align: left;
+    width: 100%;
+}
+
+.filterList input {
+    position: absolute;
+    right: 57rpx;
+}
+
+.btnList {
+    position: fixed;
+    padding: 40rpx 0rpx;
+	bottom: 0rpx;
+    width: 100%;
+    margin: 0rpx 4%;
+    box-sizing: border-box;
+	background: #f4f4f4;
+}
+
+.btnList view {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 94rpx;
+    line-height: 94rpx;
+    font-size: 34rpx;
+    border-radius: 8rpx;
+    margin: 0rpx 2%;
+    text-align: center;
+    width: 42%;
+}
+
+.btnList .reset {
+    background: #fff;
+    color: #2b7afb;
+    border: 1px solid #2b7afb;
+}
+
+.btnList .search {
+    background: #2b7afb;
+    color: #fff;
+}
+
+.placeholder {
+    color: #333 !important;
+}
+
+.peopleList {
+    padding: 10rpx 0rpx 10rpx 0rpx;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.peopleList text {
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #2b7afb;
+	width:19%;
+	display: inline-block;
+	margin:10rpx 3%;
+	text-align: center;
+    border: 1px solid #2b7afb;
+	font-size: 28rpx;
+	box-sizing: border-box;
+}
+.peopleList text.select{
+	background: #2b7afb;
+	color:#fff;
+}

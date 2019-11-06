@@ -1,0 +1,173 @@
+.searchTop {
+    background: #f4f4f4;
+    padding: 24rpx 30rpx 16rpx 30rpx;
+    box-sizing: border-box;
+    position: relative;
+    color: #464646;
+    font-size: 30rpx;
+}
+
+.searchListWrap {
+    padding-bottom: 120rpx;
+}
+
+page {
+    background: #f4f4f4;
+    font-family: "Microsoft Yahei", 微软雅黑, arial, 宋体, sans-serif;
+}
+
+.searchTop image {
+    width: 30rpx;
+    margin: 0rpx 24rpx;
+    height:30rpx !important;
+}
+
+.searchL {
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+.searchR {
+    position: absolute;
+    right: 30rpx;
+    font-size: 32rpx;
+    top: 27rpx;
+    line-height: 80rpx;
+}
+
+.searchResult {
+    position: fixed;
+    bottom: 0rpx;
+    background: #fff;
+    height: 98rpx;
+    line-height: 98rpx;
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+.searchResult view {
+    display: inline-block;
+}
+
+.searchResult view:first-child {
+    padding-left: 30rpx;
+    width: 60%;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    color: #464646;
+}
+
+.searchResult view:last-child {
+    width: 40%;
+    background: #2b7afb;
+    font-size: 34rpx;
+    color: #fff;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.searchBt {
+    margin: 0rpx 30rpx 16rpx 30rpx;
+    font-size: 24rpx;
+    color: #333;
+    display: inline-block;
+}
+
+.searchBt view {
+    width: auto;
+    display: inline-block;
+}
+
+.searchBt image {
+    width: 16rpx;
+    margin: 0rpx 12rpx 0rpx 0rpx;
+	vertical-align:middle;
+}
+.searchBt view:first-child{
+	color:#929bb6;
+}
+.searchList {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.searchList .listR text {
+    display: inline-block;
+    width: 38rpx;
+    height: 38rpx;
+    background: #ccc;
+    margin-right: 20rpx;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.searchList .list {
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    color: #2d2d2d;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.searchList .listImage {
+    height: 90rpx;
+    vertical-align: middle;
+    right: 30rpx;
+    position: absolute;
+    top: 0rpx;
+}
+
+.searchList .listImage image {
+    width: 20rpx;
+    height:20rpx !important;
+}
+
+.searchList .listL {
+    width: 38rpx;
+    height: 38rpx;
+    border: 1px solid #808080;
+    border-radius: 100%;
+    margin-right: 20rpx;
+    text-align: center;
+    line-height: 38rpx;
+}
+
+.searchList .stateTrue {
+    background: #2b7afb;
+    border: 1px solid #2b7afb;
+    color: #fff;
+}
+
+.head-title {
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.item {
+    display: block;
+    margin: 20px 0 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.ps {
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #666;
+    font-size: 24rpx;
+}

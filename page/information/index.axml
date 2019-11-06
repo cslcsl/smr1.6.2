@@ -1,0 +1,83 @@
+<view class='header'>
+    <view class='btn {{showType==1?"active":""}}' onTap='showAllInbox'>全部</view>
+    <view class='btn {{showType==2?"active":""}}' onTap='showUnreadInbox'>待办</view>
+    <view class='inboxTodoNumber' hidden='{{todoNumber>0?false:true}}'>{{todoNumber}}</view>
+</view>
+
+<view a:if='{{showType==1}}'>
+    <view class='contentHave' a:if='{{inforList.length>0}}'>
+        <view class='inforList {{item.read==1?"inforList1":""}}' a:for='{{inforList}}' catchTap='{{item.emsType==1||item.emsType==10?"listClick":""}}' data-id='{{item.relId}}' data-type='{{item.emsType}}'>
+            <template is="inboxCell" data="{{...item}}" />
+        </view>
+
+    </view>
+    <view a:else>
+        <view class='contentNull'>
+            <image src='../../images/common/nullInfo.png' mode='widthFix'></image>
+            <text>暂时没有消息哦！</text>
+        </view>
+    </view>
+</view>
+<view a:else>
+    <view class='contentHave' a:if='{{todoList.length>0}}'>
+        <view class='todoList {{item.read==1?"inforList1":""}}' a:for='{{todoList}}' catchTap='{{item.emsType==1||item.emsType==10?"listClick":""}}' data-id='{{item.relId}}' data-type='{{item.emsType}}'>
+            <template is="inboxCell" data="{{...item}}" />
+        </view>
+    </view>
+    <view a:else>
+        <view class='contentNull'>
+            <image src='../../images/common/nullInfo.png' mode='widthFix'></image>
+            <text>暂时没有消息哦！</text>
+        </view>
+    </view>
+</view>
+<template name="inboxCell">
+    <view class='inboxCellView'>
+        <view class='inboxTop'>
+            <view>{{title}}</view>
+            <view>{{createTime}}</view>
+        </view>
+        <view class='inboxContent'>{{conent}}</view>
+        <!-- 1.通知 2.请求 -->
+        <view a:if='{{emsType==11||emsType==12}}' class='teamBtn {{messageState==0?"clickTrue":""}}'>
+            <view a:if='{{messageState==1}}'>已保留</view>
+            <block a:elif='{{messageState==0}}'>
+                <view catchTap='saveEmsReleaseStatus' data-id='{{relId}}' data-emsid='{{emsId}}' class='releaseStatus {{emsType==11?"releaseStatus1":""}}' a:if='{{messageState==0}}' data-type='2'>保留</view>
+				<view a:if='{{emsType==12}}' catchTap='saveEmsReleaseStatus' data-id='{{relId}}' data-emsid='{{emsId}}' data-type='3'>不再提醒</view>
+            </block>
+            <view a:else>已过期</view>
+        </view>
+        <view class='teamBtn {{messageState==2?"clickTrue":""}}' a:if='{{emsAttr==2&&(emsType==1||emsType==10)}}'>
+            <!-- 1.已同意 2.未操作 3.已撤回 4.已拒绝 会议通知-->
+            <block a:if='{{messageState==2}}'>
+                <view catchTap='agreeClick' data-id='{{emsId}}' data-relid='{{relId}}' data-status='{{status}}' data-type='1'>同意</view>
+                <view catchTap='agreeClick' data-id='{{emsId}}' data-relid='{{relId}}' data-status='{{status}}' data-type='0'>拒绝</view>
+            </block>
+            <block a:elif='{{messageState==1}}'>
+                <view>已同意</view>
+            </block>
+            <block a:elif='{{messageState==0}}'>
+                <view>已拒绝</view>
+            </block>
+            <block a:else>
+                <view>已过期</view>
+            </block>
+        </view>
+        <view class='teamBtn {{messageState==2?"clickTrue":""}}' a:if='{{emsAttr==2&&emsType==2}}'>
+            <block a:if='{{messageState==2}}'>
+                <view catchTap='companyClick' data-id='{{emsId}}' data-relid='{{relId}}' data-status='{{status}}' data-type='1'>同意</view>
+                <view catchTap='companyClick' data-id='{{emsId}}' data-relid='{{relId}}' data-status='{{status}}' data-type='4'>拒绝</view>
+            </block>
+            <block a:elif='{{messageState==1}}'>
+                <view>已同意</view>
+            </block>
+            <block a:elif='{{messageState==4}}'>
+                <view>已拒绝</view>
+            </block>
+            <block a:elif='{{messageState==3}}'>
+                <view>已撤回</view>
+            </block>
+        </view>
+    </view>
+</template>
+        

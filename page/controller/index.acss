@@ -1,0 +1,244 @@
+page {
+    background: #f4f4f4;
+}
+.buttonWrap1{
+	bottom: 110rpx !important;
+}
+.buttonWrap {
+    position: fixed;
+    bottom: 0rpx;
+    right: 15rpx;
+}
+.buttonWrap1 image{
+	width:105rpx !important;
+}
+.buttonWrap image {
+    width: 120rpx;
+}
+
+.meetingWrap {
+    padding-bottom: 180rpx;
+}
+
+.meetinList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 30rpx 10rpx 30rpx;
+    background: #fff;
+    margin: 16rpx 0rpx 0rpx 0rpx;
+    box-sizing: border-box;
+}
+
+.meetinListL {
+    font-size: 30rpx;
+    color: #8192a7;
+}
+
+.meetinListL view {
+    margin-bottom: 10rpx;
+}
+
+.meetinListL view:first-child {
+    font-size: 36rpx;
+    color: #2d2d2d;
+}
+
+.meetinListL image {
+    width: 30rpx;
+    margin-right: 33rpx;
+}
+
+.meetinListR image {
+    width: 20rpx;
+}
+
+textarea {
+    padding: 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    min-height: 240rpx;
+    font-size: 30rpx;
+    line-height: 1.5;
+}
+
+.placeholder {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.labelList {
+    margin: 20rpx 30rpx 0rpx 30rpx;
+}
+
+.labelList view {
+    width: 21%;
+    border: 1px solid #2b7afb;
+    background: #fff;
+    color: #2b7afb;
+    margin: 0rpx 2%;
+    font-size: 28rpx;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.contentNull {
+    background: #fff;
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.statusImg {
+    transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    -moz-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.statusArrow image {
+    width: 340rpx;
+    position: absolute;
+    top: 0rpx;
+    right: -20rpx;
+}
+
+.maskBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999999;
+    top: 0rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.alertWrap {
+    height: 100%;
+	position: relative;
+	overflow-y:scroll;
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.alertWrap .meetinList {
+    margin: 0rpx;
+    border-top: 1px solid #e5e5e5;
+    text-align: left;
+}
+
+cover-view {
+    z-index: 999;
+}
+
+.doorList {
+    position: fixed;
+    bottom: 0rpx;
+	width:100%;
+    overflow-y: scroll;
+}
+
+.doorList view {
+    background: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 36rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.meetingInfo{
+	height:55rpx;
+	line-height: 55rpx;
+	background: rgba(43, 122, 251, 0.12);
+	color:#2B7AFB;
+	font-size:26rpx;
+	margin:0rpx auto;
+	text-align: center;
+}

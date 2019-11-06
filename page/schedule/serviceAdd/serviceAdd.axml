@@ -1,0 +1,52 @@
+
+<view class='meetingWrap' a:if='{{dataList.length>0}}'>
+    <view class='meetinList' onTap='meetingClick' data-index='0'>
+        <view class='meetinListL'>
+            <view>
+                <image src='../../../images/common/serviceIcon1.png' mode='widthFix'></image>{{dataList[index].mroomName}}
+            </view>
+            <view>
+                <image src='../../../images/common/zhuti.png' mode='widthFix'></image>{{dataList[index].meetingSubject}}
+            </view>
+            <view>
+                <image src='../../../images/common/serviceIcon3.png' mode='widthFix'></image>
+                {{filters.toSubsting(dataList[index].scheduleStartTime,5,7)}}/{{filters.toSubsting(dataList[index].scheduleStartTime,8,10)}}{{filters.toSubsting(dataList[index].scheduleStartTime,10,16)}} - {{filters.toSubsting(dataList[index].scheduleEndTime,5,7)}}/{{filters.toSubsting(dataList[index].scheduleEndTime,8,10)}}{{filters.toSubsting(dataList[index].scheduleEndTime,10,16)}}
+            </view>
+        </view>
+        <view class='meetinListR'>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <!-- <view class='meetingInput'> -->
+        <textarea placeholder='请输入您需要的服务(限300字)' placeholder-class='placeholder' onInput='textarea' value='{{textarea}}' a:if='{{alertState==false}}' maxlength='300' focus='{{focus}}'></textarea>
+    <!-- </view> -->
+    <view class='labelList'>
+        <view a:for='{{labelList}}' onTap='labelClick' data-value='{{item}}'>{{item}}</view>
+    </view>
+    <view class='buttonWrap' onTap='confirm'>
+        <view class='button'>提交</view>
+    </view>
+</view>
+<view class='contentNull' a:if='{{dataList.length<=0}}'>
+    <image src='../../../images/common/servieceNull.png' mode='widthFix'></image>
+    <text>48小时内，你没有会议要进行</text>
+</view>
+<block a:if='{{alertState}}'>
+    <view class='maskBg' catchTap='maskBg'>
+        <view class='alertWrap {{alertState?"fadeInDown animated":""}}'>
+            <view class='meetinList' a:for='{{dataList}}' onTap='meetingClick' data-index='{{index}}'>
+                <view class='meetinListL'>
+                    <view>
+                        <image src='../../../images/common/serviceIcon1.png' mode='widthFix'></image>{{item.mroomName}}
+                    </view>
+                    <view>
+                        <image src='../../../images/common/zhuti.png' mode='widthFix'></image>{{item.meetingSubject}}
+                    </view>
+                    <view>
+                        <image src='../../../images/common/serviceIcon3.png' mode='widthFix'></image>{{filters.toSubsting(item.scheduleStartTime,5,7)}}/{{filters.toSubsting(item.scheduleStartTime,8,10)}}{{filters.toSubsting(item.scheduleStartTime,10,16)}} - {{filters.toSubsting(item.scheduleEndTime,5,7)}}/{{filters.toSubsting(item.scheduleEndTime,8,10)}}{{filters.toSubsting(item.scheduleEndTime,10,16)}}	
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,161 @@
+
+<view class='wrapper'>
+    <view class='inputStencil' onTap='inputStencil'>
+        <image mode='widthFix' src='../../../images/common/inputStencil.png'></image>选择会议模版
+    </view>
+    <view class='filterListWrap'>
+        <view class='filterList'>
+            <view class='list'>
+                <view>会议主题
+                    <text>*</text>
+                </view>
+                <view>
+                    <input type='text' placeholder-class='placeholder' placeholder='请输入会议主题' onInput='titleInput' value='{{orderDataList.meetingTitle}}' maxlength='20'></input>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list'>
+                <view>会议类型</view>
+                <view>
+                    <picker onChange="bindMeetingTypeChange" value="{{index}}" range="{{orderDataList.meetingTypearray}}">
+                        {{orderDataList.meetingTypearray[orderDataList.meetingTypeIndex]}}
+                    </picker>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+        </view>
+        <view class='filterList'>
+            <view class='list'>
+                <view>会议日期
+                    <text>*</text>
+                </view>
+                <view>
+                    <picker start='{{orderDataList.currentDate}}' mode="date" value="{{orderDataList.meetingDate}}" onChange="bindDateChange">
+                        {{orderDataList.meetingDate}}
+                    </picker>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list'>
+                <view>开始时间
+                    <text>*</text>
+                </view>
+                <view>
+                    <picker mode="multiSelector" onChange="beginTimeChange" bindcolumnchange="beginTimeColumnChange" value="{{orderDataList.beginTimeIndex}}" range="{{orderDataList.timeList}}">
+                        <text a:if='{{orderDataList.beginTimeIndex.length>0}}'>{{orderDataList.timeList[0][orderDataList.beginTimeIndex[0]]}}:{{orderDataList.timeList[1][orderDataList.beginTimeIndex[1]]}}</text>
+                        <text class='placeholder' a:else>请选择开始时间</text>
+                    </picker>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list'>
+                <view>结束时间
+                    <text>*</text>
+                </view>
+                <view>
+                    <picker mode="multiSelector" onChange="endTimeChange" bindcolumnchange="endTimeColumnChange" range="{{orderDataList.timeList}}" value="{{orderDataList.endTimeIndex}}">
+                        <text a:if='{{orderDataList.endTimeIndex.length>0&&orderDataList.timeList[0][orderDataList.endTimeIndex[0]]!=24}}'>{{orderDataList.timeList[0][orderDataList.endTimeIndex[0]]}}:{{orderDataList.timeList[1][orderDataList.endTimeIndex[1]]}}</text>
+                        <text a:if='{{orderDataList.timeList[0][orderDataList.endTimeIndex[0]]==24}}'>24:00</text>
+                        <text class='placeholder' a:else>请选择结束时间</text>
+                    </picker>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+        </view>
+        <view class='filterList'>
+            <view class='list'>
+                <view>会议地点</view>
+                <view onTap='meetingAddress'>
+                    <text><block a:for='{{orderDataList.meetingAddressList}}' a:if='{{index<1}}'>{{item.mroomName}}<block a:if='{{orderDataList.meetingAddressList.length>1}}'>等{{orderDataList.meetingAddressList.length}}个地点</block></block></text>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+        </view>
+        <view class='filterList personListWrap'>
+            <view class='list'>
+                <view>参会人<text>*</text></view>
+                <view onTap='personOutside'>
+                    外部参会人
+                </view>
+            </view>
+            <view class="personList clearfix">
+                <view onTap='personList' data-type='1'>+</view>
+                <view a:for='{{orderDataList.selectPeopleList}}' a:if="{{orderDataList.selectPeopleList.length>0}}">
+                    <text>{{item.name}}</text>
+                    <image src='../../../images/common/personDelete.png' mode='widthFix' onTap='personListDelete' data-index="{{index}}" data-type="1"></image>
+                </view>
+				<view a:for='{{orderDataList.externalUserInfoList}}' a:if="{{orderDataList.externalUserInfoList.length>0}}" class='externalPerson'>
+                    <text>{{item.userName}}</text>
+                    <image src='../../../images/common/personDelete.png' mode='widthFix' onTap='personListDelete' data-index="{{index}}" data-type="2"></image>
+                </view>
+            </view>
+        </view>
+        <view class='filterList'>
+            <view class='list'>
+                <view>会前提醒</view>
+                <view>
+                    <picker onChange="bindAlertChange" value="{{orderDataList.pickerAlertIndex}}" range="{{orderDataList.alertarray}}">
+                        提前{{orderDataList.alertarray[orderDataList.pickerAlertIndex]}}分钟
+                    </picker>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+        </view>
+        <view class='filterList otherTab' onTap="otherTabClick">
+            <view class='list'>
+                <view>高级选项</view>
+                <view>
+                    <image src='../../../images/common/ico-arrow.png' mode='widthFix' class="{{orderDataList.otherTabState?'change':''}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class='filterList filterListLast' a:if='{{orderDataList.otherTabState}}'>
+            <view class='list'>
+                <view>会议主持人</view>
+                <view onTap='personList' data-type='2'>
+                    <text>{{orderDataList.hostPeopleList[0].name}}</text>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list'>
+                <view>会议纪要人</view>
+                <view onTap='personList' data-type='3'>
+                    <text>{{orderDataList.summaryPeopleList[0].name}}</text>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list' onTap='meetingAgenda'>
+                <view>会议议程</view>
+                <view>
+                    <text a:if='{{orderDataList.meetingProcessList.length>0}}'>{{orderDataList.meetingProcessList.length}}条议程</text>
+                    <text class='placeholder' a:else>新增议程</text>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list' onTap='meetingFile'>
+                <view>会议文件</view>
+                <view>
+                    <text a:if='{{orderDataList.meetingAttachmentList.length>0}}'>{{orderDataList.meetingAttachmentList.length}}个文件</text>
+                    <text class='placeholder' a:else>选择文件</text>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+            </view>
+            <view class='list'>
+                <view>会议签到</view>
+                <view>
+                    <switch onChange="switchChange" checked='{{orderDataList.scanState}}' color='#2b7afb' />
+                </view>
+            </view>
+            <view class='list'>
+                <view>此次会议保存模版</view>
+                <view>
+                    <switch onChange="switch2Change" checked='{{orderDataList.stencilState}}' color='#2b7afb' />
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='btnList'>
+    <view class='costPrice'>此次会议成本估算：{{orderDataList.costPrice}}元</view>
+    <view class='confirm' onTap='btnClick'>确认预订</view>
+</view>

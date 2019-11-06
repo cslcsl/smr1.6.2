@@ -1,0 +1,36 @@
+.loginImg image {
+    width: 124rpx;
+    height: auto;
+    margin: 40% auto 90rpx auto;
+}
+
+page {
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.information {
+    font-size: 34rpx;
+    color: #fff;
+}
+
+.button {
+    position: fixed;
+    bottom: 40rpx;
+    right: 40rpx;
+    left: 40rpx;
+    width: auto;
+}
+.loginBg {
+    position: fixed;
+    top: 0rpx;
+    bottom: 0rpx;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.loginBg image {
+    width: 100%;
+    height: 100%;
+}

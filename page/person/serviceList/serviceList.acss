@@ -1,0 +1,86 @@
+page {
+    background: #f4f4f4;
+}
+
+.tabList {
+    height: 90rpx;
+    line-height: 90rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #999;
+    font-size: 30rpx;
+    position: fixed;
+    top: 0rpx;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index:1;
+}
+
+.tabList .select {
+    color: #333;
+    border-bottom: 2px solid #2b7afb;
+}
+.green{
+	color:#2b7afb;
+}
+.orderWrap {
+    margin-top: 90rpx;
+	background:#fff;
+}
+
+.orderDetail {
+    margin: 0rpx 30rpx;
+	padding:30rpx 0rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.listR image {
+    width: 27rpx;
+}
+
+.listTop, .listMiddle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.listMiddle image {
+    width: 20rpx;
+}
+
+.listTop {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.listTop view:last-child {
+    font-size: 30rpx;
+}
+
+.listMiddle {
+    color: #333;
+    font-size: 30rpx;
+	margin:10rpx 0rpx;
+}
+
+.listBottom {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.listMiddle view:first-child {
+	margin-right:20rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

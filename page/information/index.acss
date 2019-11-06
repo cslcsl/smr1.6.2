@@ -1,0 +1,214 @@
+page {
+  background: #f4f4f4;
+}
+
+.header {
+  background: #fff;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  position: fixed;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.header view {
+  margin: auto;
+}
+
+.header .btn.active {
+  font-weight: bold;
+  color: #808080;
+  font-size: 30rpx;
+  border-bottom:2px solid #2B7AFB
+}
+
+.header .btn {
+  font-weight: normal;
+  color: #ccc;
+  font-size: 30rpx;
+  height:88rpx;
+  line-height: 88rpx;
+}
+
+.inboxTodoNumber {
+  min-width: 25rpx;
+  min-height: 30rpx;
+  padding:0rpx 8rpx;
+  top: 20rpx;
+  right: 60rpx;
+  position: fixed;
+  background: red;
+  border-radius: 30rpx;
+  text-align: center;
+  color: white;
+  font-size: 26rpx;
+}
+
+.contentHave {
+  padding-top: 114rpx;
+}
+.inboxCellView {
+  background: white;
+  margin: 0% 30rpx 24rpx 30rpx;
+  border-radius: 8rpx;
+  border-left:2px solid #9CB8D7;
+}
+
+.inboxTop {
+  display: flex;
+  width: 100%;
+  height: 72rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inboxTop view:first-child {
+  font-size: 36rpx;
+  margin-left: 26rpx;
+  color: #464646;
+}
+
+.inboxTop view:last-child {
+  margin-right: 30rpx;
+  color: #8192a7;
+  font-size: 28rpx;
+  float: right;
+}
+
+.inboxContent {
+  font-size: 30rpx;
+  color: #8192a7;
+  margin: 0rpx 30rpx 0rpx 24rpx;
+  padding: 0rpx 0rpx 20rpx 0rpx;
+  word-break: break-all;
+}
+
+.teamBtn {
+  display: inline-block;
+  margin: 0rpx 0rpx 0rpx 0rpx;
+  width: 100%;
+}
+
+.teamBtn view {
+  height: 38rpx;
+  line-height: 38rpx;
+  padding: 0rpx 20rpx;
+  margin-right: 30rpx;
+  font-size: 24rpx;
+  border-radius: 18rpx;
+  color: #8192A7;
+  background: #F6F8FD;
+  float: right;
+}
+.clickTrue{
+	height:97rpx;
+	line-height: 97rpx;
+	display: block;
+}
+.clickTrue view{
+	width:50%;
+	border-top:1px solid #e5e5e5;
+	box-sizing: border-box;
+	font-size:36rpx;
+	background: none;
+	display: inline-block;
+	margin:0rpx auto;
+	height:97rpx;
+	line-height: 97rpx;
+	text-align: center;
+	border-radius: 0rpx;
+}
+.clickTrue view:first-child,.releaseStatus,.releaseStatus1{
+  color: #2B7AFB;
+  border-left:1px solid #e5e5e5;
+}
+.releaseStatus1{
+	width:100% !important;
+	color: #2B7AFB !important;
+}
+.clickTrue view:last-child {
+  color: #ccc;
+  border-left:none !important;
+}
+
+/* .tabTop {
+  height: 90rpx;
+  line-height: 90rpx;
+  display: inline-block;
+  width: 100%;
+  margin: 0rpx auto;
+  text-align: center;
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.tabTop view {
+  width: 50%;
+  display: inline-block;
+}
+
+.tabTop .select {
+  color: #808080;
+}
+
+.inforList {
+  margin: 24rpx 30rpx 0rpx 30rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  text-align: right;
+  background: #fff;
+  border-left: 4rpx solid #2b7afb;
+}
+
+.inforList1 {
+  border-left: 4rpx solid #e85757;
+}
+
+.inforTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #808080;
+}
+
+.inforTop view:first-child {
+  font-size: 30rpx;
+  color: #464646;
+}
+
+.inforList .infor {
+  color: #8192a7;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  margin-top: 10rpx;
+  text-align: left;
+}
+
+.teamBtn {
+  display: inline-block;
+  margin: 20rpx 0rpx 0rpx 0rpx;
+}
+
+.teamBtn view {
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+  padding: 0rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+  color: #808080;
+  display: inline-block;
+  background: #f4f4f4;
+}
+
+.clickTrue view:first-child {
+  background: #2b7afb;
+  color: #fff;
+}
+
+.clickTrue view:last-child {
+  background: #e85757;
+  color: #fff;
+} */

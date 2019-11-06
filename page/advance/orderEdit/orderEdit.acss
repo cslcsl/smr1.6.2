@@ -1,0 +1,227 @@
+/* 时间段选择 */
+
+page {
+    background: #f4f4f4;
+}
+
+.confirmBtn {
+    height: 94rpx;
+    font-size: 34rpx;
+    line-height: 94rpx;
+    margin: 0rpx 40rpx;
+    text-align: center;
+    color: #fff;
+    border-radius: 8rpx;
+    background: #2b7afb;
+}
+
+.inputStencil {
+    margin: 16rpx auto;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #2b7afb;
+}
+
+.inputStencil image {
+    width: 50rpx;
+    margin-right: 20rpx;
+}
+
+.filterList {
+    margin: 16rpx 0rpx;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+.personListWrap .list {
+    margin: 0rpx !important;
+    padding: 0rpx 0rpx 0rpx 30rpx;
+    box-sizing: border-box;
+}
+
+.personListWrap .list view:last-child {
+    font-size: 24rpx;
+    color: #2b7afb;
+}
+.filterList .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin: 0rpx 0rpx 0rpx 30rpx;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    color: #8192A7;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.filterList .list:last-child {
+    border-bottom: none;
+}
+
+.placeholder {
+    color: #ccc !important;
+}
+
+.filterList .list text {
+    color: #2d2d2d;
+}
+
+.filterList input, .filterList picker, .filterList .list view:last-child text{
+    height: 90rpx !important;
+    line-height: 90rpx;
+    display: block;
+    color: #2d2d2d;
+    text-align: right;
+    margin-right: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+picker text {
+    margin-right: 0rpx !important;
+}
+
+.filterList .list view:last-child {
+    margin: 0rpx 30rpx 0rpx 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
+    min-width: 200rpx;
+    text-align: right;
+}
+
+.filterList .list image {
+    width: 17rpx;
+    height: 90rpx;
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    right: 30rpx;
+    top: 35rpx;
+}
+
+.otherTab {
+    background: #fff;
+    margin: 0rpx 0rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+}
+
+.otherTab view {
+    color: #40474e;
+}
+
+.otherTab image {
+    width: 25rpx !important;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.filterListLast {
+    margin: 0rpx 0rpx 16rpx 0rpx !important;
+}
+
+.otherTab image.change {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+
+.wrapper {
+    padding-bottom: 185rpx;
+}
+
+.btnList {
+    padding: 0rpx 30rpx 40rpx 30rpx;
+    position: fixed;
+    bottom: 0rpx;
+    width: 100%;
+    background: #f4f4f4;
+    box-sizing: border-box;
+}
+
+.btnList .confirm {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 94rpx;
+    line-height: 94rpx;
+    font-size: 34rpx;
+    border-radius: 8rpx;
+    text-align: center;
+    width: 100%;
+}
+
+.btnList .confirm {
+    background: #2b7afb;
+    color: #fff;
+}
+
+.costPrice {
+    margin: 14rpx auto 20rpx auto;
+    text-align: center;
+    color: #929bb6;
+    font-size: 24rpx !important;
+}
+.filterList .list view:first-child text{
+	color: red;
+	display: inline-block;
+	line-height: 90rpx;
+	margin-left:10rpx;
+}
+.personList {
+    margin: 0rpx 2% 20rpx 2%;
+}
+
+.personList view:first-child {
+    color: #2b7afb;
+    border: 1px solid #2b7afb;
+}
+
+.personList view {
+    width: 22%;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0rpx 10rpx;
+    box-sizing: border-box;
+    margin: 20rpx 1.5% 0rpx 1.5%;
+    border: 1px solid #7a7c80;
+    position: relative;
+    float: left;
+	text-align: center;
+}
+
+.personList view text {
+    font-size: 28rpx;
+    color: #5d5e60;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.personList view image {
+    width: 24rpx;
+    color: #fff;
+    position: absolute;
+    top: -12rpx;
+    right: -12rpx;
+}
+.externalPerson{
+	background: #F3F7FF;
+}
+.externalPerson text{
+	color:#737578;
+}

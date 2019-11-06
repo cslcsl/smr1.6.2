@@ -1,0 +1,297 @@
+page {
+    background: #f4f4f4;
+}
+
+/* 议程开始 */
+
+.agendaAdd {
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #2b7afb;
+    position: fixed;
+    height: 94rpx;
+    line-height: 94rpx;
+    display: block;
+    left: 40rpx;
+    right: 40rpx;
+    bottom: 40rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+    color: #2b7afb;
+}
+
+.agendaAdd image {
+    width: 84rpx;
+}
+
+/* 议程添加 */
+
+.maskBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0rpx;
+    bottom: 0rpx;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+
+.agendaAddWrap {
+    background: #fff;
+    border-radius: 24rpx;
+    margin: 0px 4%;
+    width: 92%;
+    box-sizing: border-box;
+}
+
+.agendaAddTop {
+    padding: 33rpx 30rpx 18rpx 30rpx;
+    font-size: 36rpx;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.agendaAddTop .green {
+    color: #2b7afb !important;
+}
+
+.agendaAddTop view:nth-child(2) {
+    font-size: 30rpx;
+    color: #2d2d2d;
+}
+
+.agendaAddTop view:last-child {
+    color: #ccc;
+}
+
+.agendaAddTop view.complete {
+    color: #2b7afb;
+}
+
+.agendaAddWrap .addList {
+    width: 100%;
+    padding: 0rpx 30rpx;
+    box-sizing: border-box;
+}
+
+.agendaAddWrap .addList view {
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 0rpx 0rpx 18rpx 0rpx;
+    border-radius: 4rpx;
+}
+
+.agendaAddWrap .addList input, .agendaAddWrap .addList picker {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0rpx 30rpx;
+    box-sizing: border-box;
+    border-radius: 24rpx;
+    font-size: 30rpx;
+    color: #464646;
+    text-align: left;
+	max-width:90%;
+    width:100%;
+}
+.agendaAddWrap .addList image {
+    width: 32rpx;
+    height: 60rpx;
+    vertical-align: middle;
+    position: absolute;
+    right: 20rpx;
+    top: 15rpx;
+}
+
+.agendaAddWrap .placeholder {
+    color: #808080;
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+/* 文件开始 */
+
+.fileWrap {
+    padding: 0rpx 20rpx 160rpx 20rpx;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+.fileList {
+    position: relative;
+    margin: 16rpx 0rpx 0rpx 0rpx;
+    background: #fff;
+    padding: 36rpx 0rpx;
+    border-radius: 8rpx;
+    box-shadow: 0px 2px 10px 0px rgba(234, 234, 236, 1);
+}
+
+.fileList .fileL {
+    position: absolute;
+    left: 0rpx;
+    top: 30rpx;
+    width: 160rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    color: #2d2d2d;
+    margin: 0rpx auto;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+    line-height: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.agendaAddBottom view {
+    width: 50%;
+    display: inline-block;
+    font-size: 36rpx;
+    color: #333;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-top: 1px solid #e5e5e5;
+    box-sizing: border-box;
+}
+
+.agendaAddBottom view:last-child {
+    color: #ccc;
+    border-left: 1px solid #e5e5e5;
+}
+
+.agendaAddBottom view.green {
+    color: #2b7afb;
+}
+
+.fileList .fileR {
+    margin: 0rpx 0rpx 0rpx 180rpx;
+}
+
+.fileList .fileR .title {
+    font-size: 30rpx;
+}
+
+.fileR view{
+    font-size: 30rpx;
+    color: #8192A7;
+}
+
+.fileR image {
+    width: 20rpx;
+    margin: 0rpx 20rpx 0rpx 10rpx;
+}
+.fileR .inforlist view:first-child{
+	margin-top:-5rpx;
+}
+
+.fileList .delete{
+    width: 100rpx;
+    height: 100%;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: -150rpx;
+    display: flex;
+    font-size: 32rpx;
+    justify-content: center;
+    align-items: center;
+}
+.fileList .delete image{
+	width:80rpx;
+	margin:0rpx auto;
+}
+/* 左滑效果 */
+
+.order-item {
+    height: 100rpx;
+    width: 100%;
+    /* display: flex; */
+    position: relative;
+}
+
+.remove {
+    width: 160rpx;
+    height: 100%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -160rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentNull {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0rpx;
+    bottom: 0rpx;
+    padding: 0rpx 40rpx;
+    box-sizing: border-box;
+    margin: 0rpx auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.contentNull image {
+    width: 300rpx;
+}
+
+.contentNull text {
+    font-size: 32rpx;
+    color: #999;
+    display: block;
+}

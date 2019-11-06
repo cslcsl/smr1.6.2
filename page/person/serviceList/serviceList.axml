@@ -1,0 +1,28 @@
+
+<view class='tabList'>
+    <view a:for='{{tabList}}' onTap='tabClick' data-index='{{index}}' class='{{indexVal==index?"select":""}}' data-type='{{item.tabtype}}'>{{item.name}}</view>
+</view>
+<view class='orderWrap'>
+    <view class='orderList' a:for='{{dataList}}' catchTap='orderDetail' data-id='{{item.id}}'>
+        <view class='orderDetail'>
+            <view class='listTop'>
+                <view>{{filters.toSubsting(item.callTime,0,4)}}/{{filters.toSubsting(item.callTime,5,7)}}/{{filters.toSubsting(item.callTime,8,10)}}{{filters.toSubsting(item.callTime,10,16)}}</view>
+                <view a:if='{{item.serviceStatus==2}}'>已完成</view>
+				<view a:elif='{{item.serviceStatus==1}}' class='green'>处理中</view>
+				<view a:else>已提交</view>
+            </view>
+            <view class='listMiddle'>
+                <view>{{item.content}}</view>
+                <view>
+                    <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+                </view>
+
+            </view>
+            <view class='listBottom'>{{item.mroomName}} {{filters.toSubsting(item.orderStartTime,0,4)}}/{{filters.toSubsting(item.orderStartTime,5,7)}}/{{filters.toSubsting(item.orderStartTime,8,10)}}{{filters.toSubsting(item.orderStartTime,10,16)}} - {{filters.toSubsting(item.orderEndTime,0,4)}}/{{filters.toSubsting(item.orderEndTime,5,7)}}/{{filters.toSubsting(item.orderEndTime,8,10)}}{{filters.toSubsting(item.orderEndTime,10,16)}}</view>
+        </view>
+    </view>
+</view>
+<view class='contentNull' a:if='{{dataList.length<=0&&dataListState}}'>
+    <image src='../../../images/common/nullInfo.png' mode='widthFix'></image>
+    <text>暂无数据</text>
+</view>

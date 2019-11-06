@@ -1,0 +1,106 @@
+page {
+    background: rgba(205, 205, 209, 0.30);
+}
+
+.detailWrap {
+    padding-bottom: 155rpx;
+}
+
+.submitWrap {
+    position: fixed;
+    z-index: 999;
+    bottom: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+}
+
+.submitBtn {
+    margin: 0rpx 30rpx 40rpx 30rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+	border-radius:8rpx;
+    background: #e9c493;
+    background: -webkit-gradient(linear, top, from(#e9c493), to(#d2a467));
+    background: -webkit-linear-gradient(top, #e9c493, #d2a467);
+    background: -o-linear-gradient(top, #e9c493, #d2a467);
+    color: #fff;
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.detailTop, .detailCon, .detailBottom {
+    padding: 30rpx;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.detailTop {
+    margin-top: 20rpx;
+}
+
+.detailTop .title {
+    font-size: 36rpx;
+    color: #363a48;
+}
+
+.detailTop .adderss {
+    font-size: 30rpx;
+    color: #a9afb9;
+    margin-top: 10rpx;
+}
+
+.detailTop .date {
+    padding-bottom: 30rpx;
+    font-size: 30rpx;
+    color: #a9afb9;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.detailCon {
+    padding-top: 0rpx !important;
+}
+
+.detailCon .title {
+    font-size: 36rpx;
+    color: #363a48;
+    margin-bottom: 20rpx;
+}
+
+.content {
+    font-size: 30rpx;
+    color: #666;
+}
+
+.detailBottom {
+    margin-top: 12rpx;
+}
+
+.detailBottom .title {
+    padding-bottom: 16rpx;
+    font-size: 36rpx;
+    color: #363a48;
+}
+
+.companyList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.companyList image {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 100%;
+}
+
+.companyList text {
+    font-size: 32rpx;
+    color: #333;
+    margin-left: 16rpx;
+}
+
+.companyInfo {
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    color: #666;
+}

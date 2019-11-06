@@ -1,0 +1,10 @@
+<view class='wrapper'>
+    <view class='loginBg'>
+        <image src='../../../images/common/bg.png' mode='aspectFix'></image>
+    </view>
+    <view class='loginImg' onTap='cancel' data-type='0'>
+        <image src='../../../images/common/advanceSuccess.png' mode='widthFix'></image>
+    </view>
+    <view class='information'>申请成功，请等待管理员审核…</view>
+    <view class='button' onTap='cancel' data-type='1'>撤销审核</view>
+</view>

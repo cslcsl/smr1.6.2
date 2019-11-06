@@ -1,0 +1,94 @@
+{
+  "pages": [
+    "page/schedule/index",
+    "page/index/index",
+    "page/person/fileEdit/fileEdit",
+    "page/person/login/login",
+    "page/schedule/scanCode/scanCode",
+    "page/schedule/personList/personList",
+    "page/schedule/personRole/personRole",
+    "page/schedule/addFile/addFile",
+    "page/schedule/scheduleDetail/scheduleDetail",
+    "page/schedule/scheduleDetailBefore/scheduleDetailBefore",
+    "page/schedule/serviceSuccess/serviceSuccess",
+    "page/schedule/serviceAdd/serviceAdd",
+    "page/advance/stencilAdd/stencilAdd",
+    "page/advance/stencilList/stencilList",
+    "page/advance/index",
+    "page/advance/conditionFilter/conditionFilter",
+    "page/advance/advanceSearch/advanceSearch",
+    "page/advance/searchResult/searchResult",
+    "page/advance/joinList/joinList",
+    "page/advance/deviedSelect/deviedSelect",
+    "page/advance/outsidePeople/outsidePeople",
+    "page/advance/orderEdit/orderEdit",
+    "page/advance/scheduleContact/scheduleContact",
+    "page/advance/meetingAddress/meetingAddress",
+    "page/advance/advanceResult/advanceResult",
+    "page/advance/confirmOrder/confirmOrder",
+    "page/advance/stencilDetail/stencilDetail",
+    "page/advance/orderDelay/orderDelay",
+    "page/advance/orderSelect/orderSelect",
+    "page/information/index",
+    "page/person/person",
+    "page/person/passwordEdit/passwordEdit",
+    "page/person/companySelect/companySelect",
+    "page/person/faceScan/faceScan",
+    "page/person/companyId/companyId",
+    "page/person/loginResult/loginResult",
+    "page/person/fileList/fileList",
+    "page/person/loginPassword/loginPassword",
+    "page/person/personEdit/personEdit",
+    "page/person/loginAccount/loginAccount",
+    "page/person/serviceList/serviceList",
+    "page/person/serviceDetail/serviceDetail",
+    "page/person/orderList/orderList",
+    "page/controller/index"
+  ],
+  "window": {
+    "enableWK": "YES",
+    "enableDSL": true,
+    "defaultTitle": "智会SMR（1.6.2）",
+    "backgroundColor": "#fff",
+    "pullRefresh": false,
+    "allowsBounceVertical": true
+  },
+  "tabBar": {
+    "textColor": "#999",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "items": [
+      {
+            "name": "日程",
+            "pagePath": "page/schedule/index",
+            "icon": "images/tab/richeng.png",
+            "activeIcon": "images/tab/richengcopy.png"
+        },
+        {
+            "name": "会议室",
+            "pagePath": "page/advance/index",
+            "icon": "images/tab/yuding.png",
+            "activeIcon": "images/tab/yudingcopy.png"
+        },
+        {
+            "name": "遥控器",
+            "pagePath": "page/controller/index",
+            "icon": "images/tab/control.png",
+            "activeIcon": "images/tab/controlcopy.png"
+        },
+        {
+            "name": "消息",
+            "pagePath": "page/information/index",
+            "icon": "images/tab/xiaoxi.png",
+            "activeIcon": "images/tab/xiaoxicopy.png"
+        },
+        {
+            "name": "我的",
+            "pagePath": "page/person/person",
+            "icon": "images/tab/my.png",
+            "activeIcon": "images/tab/mycopy.png"
+        }
+    ]
+  },
+  "debug": true
+}

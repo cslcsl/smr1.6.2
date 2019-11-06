@@ -1,0 +1,8 @@
+<view class='result'>
+    <image src='../../../images/common/advanceSuccess.png' mode='widthFix'></image>
+    <text>预订成功，是否要建立或关联日程？</text>
+</view>
+<view class='btnList'>
+    <view class='button' onTap='btnClick' data-type='1'>绑定已有日程</view>
+    <view class='button' onTap='btnClick' data-type='2'>新建日程</view>
+</view>

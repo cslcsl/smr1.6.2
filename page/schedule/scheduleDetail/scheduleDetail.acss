@@ -1,0 +1,826 @@
+page {
+    background: #f4f4f4;
+}
+
+.tabList {
+    height: 89rpx;
+    line-height: 87rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #999;
+    font-size: 30rpx;
+    position: fixed;
+    top: 0rpx;
+	padding-top:10rpx;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 999;
+}
+
+.tabList .select {
+    border-bottom: 2px solid #2b7afb;
+    color: #333;
+}
+
+.fileText {
+    color: #2b7afb;
+}
+
+.detailList {
+    background: #fff;
+    padding: 0rpx 0rpx 0rpx 30rpx;
+    box-sizing: border-box;
+}
+
+.detailList .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.detailList .list image {
+    width: 17rpx;
+    height: 90rpx;
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    right: 0rpx;
+    top: 35rpx;
+}
+
+.detailWrap, .dynamicWrap {
+    padding: 89rpx 0rpx 0rpx 0rpx;
+    border-bottom: 21rpx solid #f4f4f4;
+}
+
+.detailList view:last-child {
+    border-bottom: none;
+}
+
+.detailList .list view:first-child {
+    color: #808080;
+    /* margin-left: 10rpx; */
+}
+
+.detailList .list view:last-child {
+    color: #2d2d2d;
+    margin: 0rpx 30rpx 0rpx 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
+    position: relative;
+}
+
+.detailList .list label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 32rpx;
+    display: block;
+}
+
+.marginTop {
+    border-top: 21rpx solid #f4f4f4;
+}
+
+.scan {
+    color: #2b7afb !important;
+}
+
+/* 动态开始 */
+
+.dynamicTop {
+    height: 136rpx;
+    background: #fff;
+    padding: 0rpx 40rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dynamicTop .date {
+    font-size: 30rpx;
+    color: #2d2d2d;
+    padding: 20rpx 0rpx;
+}
+
+.dynamicTop .time {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 40rpx;
+    color: #2d2d2d;
+    height: 38rpx;
+    line-height: 38rpx;
+}
+
+.dynamicTop .time image {
+    width: 38rpx;
+    height: 38rpx;
+    vertical-align: middle;
+    margin-right: 16rpx;
+}
+
+.dynamicList {
+    margin: 0rpx 0rpx 40rpx 0rpx;
+    padding: 0rpx 0rpx 20rpx 37rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.dynamicList .list {
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.dynamicList .listL {
+    position: absolute;
+    left: -8rpx;
+    top: 25rpx;
+}
+
+.listL label {
+    width: 8rpx;
+    height: 8rpx;
+    background: #fff;
+    border: 4rpx solid rgba(93, 195, 160, 1);
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.dynamicList .listR {
+    margin: 0rpx 0rpx 0rpx 52rpx;
+    padding-top: 30rpx;
+}
+
+.dynamicList .listR .time {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.dynamicList .listR .infor {
+    font-size: 30rpx;
+    color: #333;
+    /* padding: 20rpx 0rpx; */
+}
+
+/* .dynamicList .list:last-child {
+    border-left: 1px solid #e5e5e5;
+    border-image: -webkit-linear-gradient(rgba(228, 230, 236, 1), rgba(228, 230, 236, 0)) 20 20;
+    border-image: -moz-linear-gradient(rgba(228, 230, 236, 1), rgba(228, 230, 236, 0)) 20 20;
+    border-image: -o-linear-gradient(rgba(228, 230, 236, 1), rgba(228, 230, 236, 0)) 20 20;
+    border-image: linear-gradient(rgba(228, 230, 236, 1), rgba(228, 230, 236, 0)) 20 20;
+} */
+
+.btnList {
+    margin: 0rpx 40rpx;
+    padding: 40rpx 0rpx;
+}
+
+.btnList4 {
+    padding-top: 0rpx;
+}
+
+.btnList view {
+    height: 94rpx;
+    line-height: 94rpx;
+    font-size: 34rpx;
+    color: #fff;
+    background: #ccc;
+    margin: 0rpx auto;
+    text-align: center;
+    border-radius: 8rpx;
+}
+
+.btnList3 view.border {
+    background: #fff;
+    color: #2b7afb;
+    border: 1px solid #2b7afb;
+}
+
+.btnList1 view {
+    display: inline-block;
+    width: 46%;
+    margin: 0rpx 2%;
+    box-sizing: border-box;
+}
+
+.btnList view.blue {
+    color: #fff;
+    background: #2b7afb;
+}
+
+.agendaWrapNull {
+    padding: 30rpx !important;
+}
+
+.btnEnd view {
+    background: #ccc;
+    color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* 新增样式 */
+
+.meetingDetail {
+    padding: 0rpx 30rpx 30rpx 30rpx;
+    background: #fff;
+}
+
+.meetingTitle {
+    color: #2d2d2d;
+    font-size: 36rpx;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+.meetingLabel {
+    min-width: 340rpx;
+    text-align: right;
+}
+
+.meetingDetailT {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 0rpx 20rpx 0rpx;
+}
+
+.meetingList, .btTitle, .peopleList, .agendaList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.publishPeople {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.meetingListL {
+    display: flex;
+    justify-content: left;
+    align-items: top;
+}
+
+.meetingLabel view {
+    display: inline-block;
+    font-size: 24rpx;
+    color: #8192a7;
+    background: #f6f8fd;
+    height: 38rpx;
+    line-height: 38rpx;
+    border-radius: 19rpx;
+    width: 130rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    margin-left: 12rpx;
+}
+
+.operationType1 {
+    color: #2b7afb !important;
+    background: rgba(43, 122, 251, 0.15) !important;
+}
+
+.operationType2 {
+    color: #5dc3a0 !important;
+    background: rgba(93, 195, 160, 0.15) !important;
+}
+
+.labelMore {
+    width: auto !important;
+    background: none !important;
+}
+
+.labelMore label {
+    width: 4px;
+    height: 4px;
+    background: #ccc;
+    margin-left: 6rpx;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.meetingDetail {
+    font-size: 30rpx;
+    color: #8192a7;
+}
+
+.meetingDetailB {
+    font-size: 36rpx;
+    color: #333;
+    padding-bottom: 24rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.meetingDetailB label:last-child {
+    font-size: 30rpx;
+    color: #8192a7;
+    margin-left: 16rpx;
+}
+
+.meetingListL image, .publishPeople image {
+    width: 30rpx;
+    margin-right: 25rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.meetingListR image {
+    width: 20rpx;
+}
+
+.meetingListR {
+    min-width: 30rpx;
+    text-align: right;
+}
+
+.meetingListL label {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 150%;
+}
+
+.meetingList {
+    padding: 24rpx 0rpx 20rpx 0rpx;
+}
+
+.btTitle {
+    font-size: 24rpx;
+    color: #929bb6;
+    margin: 0rpx 30rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+}
+
+.btTitle label {
+    color: #333;
+    margin-left: 18rpx;
+    display: inline-block;
+}
+
+.btTitle image {
+    width: 20rpx;
+}
+
+.peopleList {
+    padding: 30rpx 30rpx 30rpx 10rpx;
+    background: #fff;
+}
+
+.peopleList .list {
+    margin-right: 30rpx;
+    width: 100%;
+    display: flex;
+}
+
+.peopleListR {
+    position: absolute;
+    right: 30rpx;
+}
+
+.peopleListR image {
+    width: 20rpx;
+}
+
+.peopleList .peopleListDetail {
+    width: 20%;
+    padding: 0rpx 3%;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 80rpx;
+    text-align: center;
+}
+
+.peopleListDetail image {
+    width: 100%;
+    max-width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+}
+
+.peopleListDetail .name {
+    color: #464646;
+    font-size: 20rpx;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    white-space: nowrap;
+    margin: 10rpx auto;
+}
+
+.peopleListDetail .label {
+    width: 100%;
+    height: 28rpx;
+    line-height: 28rpx;
+    border-radius: 14rpx;
+    font-size: 18rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: rgba(43, 122, 251, 0.15);
+    color: #2b7afb;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.peopleListDetail .label2 {
+    background: rgba(93, 195, 160, 0.15);
+    color: #5dc3a0;
+}
+
+.agendaList {
+    padding: 0rpx 30rpx;
+    background: #fff;
+}
+
+.agendaDetail {
+    position: relative;
+    border-left: 1px solid #e7e7f0;
+    width: 100%;
+    padding: 12rpx 0rpx;
+}
+
+.agendaDetail .listWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30rpx;
+    color: #333;
+    padding: 12rpx 0rpx;
+}
+
+.agendaDetail .list label {
+    width: 6rpx;
+    height: 6rpx;
+    border: 2px solid #5dc3a0;
+    border-radius: 100%;
+    margin: 0rpx 20rpx 0rpx -6rpx;
+    display: inline-block;
+}
+
+.agendaDetail .list:last-child {
+    color: #8192a7;
+}
+
+.agendaDetail .list view:last-child {
+    font-size: 24rpx;
+    color: #8192a7;
+    margin: 5rpx 0rpx 0rpx 20rpx;
+}
+
+.fileWrap {
+    background: #fff;
+    padding: 0rpx 30rpx 0rpx 30rpx;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.fileList {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.fileList:last-child {
+    border-bottom: none;
+}
+
+.fileList .fileL {
+    position: absolute;
+    left: 0rpx;
+    top: 30rpx;
+    width: 60rpx;
+}
+
+.fileList .fileL image {
+    width: 60rpx;
+}
+
+.fileL label {
+    position: absolute;
+    top: 26rpx;
+    font-size: 20rpx;
+    width: 100%;
+    display: block;
+    left: 0rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    color: #fff;
+}
+
+.fileList .fileR {
+    margin: 0rpx 0rpx 0rpx 80rpx;
+    padding: 30rpx 0rpx 24rpx 0rpx;
+}
+
+.fileList .fileR .title {
+    font-size: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+.fileList .fileR .inforlist {
+    box-sizing: border-box;
+    margin-top: 10rpx;
+	word-break: break-all;
+}
+
+.fileR .inforlist view:first-child {
+    font-size: 24rpx;
+    color: #8192a7;
+}
+
+.fileR .title view:last-child {
+    font-size: 26rpx;
+    color: #808080;
+}
+
+.fileR .inforlist label {
+    font-size: 30rpx;
+    color: #8192a7;
+}
+
+.fileAdd {
+    margin: 0rpx auto;
+    text-align: center;
+    width: 100%;
+}
+
+.fileAdd image {
+    width: 152rpx;
+    padding: 40rpx 0rpx;
+}
+
+.fileList .delete {
+    width: 150rpx;
+    height: 100%;
+    background: #f55076;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: -180rpx;
+    display: flex;
+    font-size: 32rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.listContetnNull {
+    background: #fff;
+    padding: 30rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #8192a7;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.maskBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    top: 0rpx;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.agendaAddWrap,.messageWrapper{
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.agendaAddWrap view {
+    font-size: 36rpx;
+    color: #333;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.audioWrap .name {
+    font-size: 30rpx;
+    color: #333;
+    margin: 20rpx 0rpx 40rpx 0rpx;
+}
+
+.audioWrap .pause {
+    border-top: 1px solid #e5e5e5;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    color: #2b7afb;
+}
+
+.fileList .fileR .title view:first-child {
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.audioAddWrap {
+    background: #fff;
+    border-radius: 14rpx;
+    margin: 0px 4%;
+    width: 92%;
+    box-sizing: border-box;
+}
+
+.maskBg2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0rpx;
+    bottom: 0rpx;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.audioAddTop {
+    padding: 33rpx 30rpx 18rpx 30rpx;
+    font-size: 36rpx;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.messageTitle view:last-child {
+    font-size: 28rpx;
+    color: #2b7afb;
+}
+
+.messageTitle image {
+    width: 25rpx;
+}
+
+.messageWrap .fileL {
+    width: 80rpx;
+}
+
+.messageWrap .fileR {
+    margin: 0rpx 0rpx 0rpx 100rpx;
+}
+
+.messageWrap .fileL image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+}
+
+.messageWrap .title view {
+    color: #8192a7;
+    font-size: 26rpx;
+}
+.messageWrap .inforlist{
+	font-size:30rpx;
+	color:#333;
+}
+.messageInputWrap{
+	height:100%;
+	width:100%;
+}
+.closeMessage{
+	position: absolute;
+	bottom:124rpx;
+	top:0rpx;
+	height:100%;
+	width:100%;
+}
+.messageWrapper{
+	height: 124rpx;
+	width:100%;
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0rpx;
+	z-index:99999;
+}
+.messageWrapper textarea{
+	height: 80rpx;
+	text-align: left;
+	padding: 22rpx 30rpx 22rpx 30rpx; 
+}
+.messageWrapper view{
+	margin-right:30rpx;
+	width:140rpx;
+	background: #2B7AFB;
+	color:#fff;
+	border-radius: 8rpx;
+	height:80rpx;
+	line-height: 80rpx;
+	top:22rpx;
+}
+.navWrap{
+	font-size:37rpx;
+	color:#000;
+	width:100%;
+	position: fixed;
+    top: 0rpx;
+	background: #fff;
+	padding:0rpx 30rpx;
+	box-sizing: border-box;
+}
+.navWrap .navList{
+	height:88rpx;
+	line-height: 88rpx;
+	display: flex;
+    justify-content:flex-start;
+    align-items: center;
+	position: relative;
+}
+.navList view:first-child{
+	position: absolute;
+	z-index: 999999;
+}
+.navList view:last-child{
+	width:100%;
+	display: flex;
+    justify-content:center;
+    align-items: center;
+	background: #fff;
+}
+.navWrap image:first-child{
+	width:32rpx;
+	margin-right:30rpx;
+	transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+.navWrap image{
+	width:42rpx;
+	display: inline-block;
+	vertical-align: middle;
+}
+.sliderWrap{
+	margin:30rpx 0rpx 40rpx 0rpx;
+}

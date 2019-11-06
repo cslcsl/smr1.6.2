@@ -1,0 +1,17 @@
+
+<view class='orderWrap'>
+    <view class='orderList'>
+        <view class='orderDetail'>
+            <view class='listTop'>
+                <view>{{filters.toSubsting(dataList.callTime,0,4)}}/{{filters.toSubsting(dataList.callTime,5,7)}}/{{filters.toSubsting(dataList.callTime,8,10)}}{{filters.toSubsting(dataList.callTime,10,16)}}</view>
+                <view a:if='{{dataList.serviceStatus==2}}'>已完成</view>
+				<view a:elif='{{dataList.serviceStatus==1}}'>处理中</view>
+				<view a:else>已提交</view>
+            </view>
+            <view class='listBottom'>{{dataList.mroomName}} {{filters.toSubsting(dataList.orderStartTime,0,4)}}/{{filters.toSubsting(dataList.orderStartTime,5,7)}}/{{filters.toSubsting(dataList.orderStartTime,8,10)}}{{filters.toSubsting(dataList.orderStartTime,10,16)}} - {{filters.toSubsting(dataList.orderEndTime,0,4)}}/{{filters.toSubsting(dataList.orderEndTime,5,7)}}/{{filters.toSubsting(dataList.orderEndTime,8,10)}}{{filters.toSubsting(dataList.orderEndTime,10,16)}}</view>
+            <view class='listMiddle'>
+                <view>{{dataList.content}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,43 @@
+page {
+    background: #fff;
+}
+
+.btnList {
+    width: 100%;
+    left: 0rpx;
+    right: 0rpx;
+    padding: 0rpx 15rpx;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.btnList view {
+    width: 46%;
+    margin: 0rpx 2%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.btnList view:first-child {
+    background: #fff;
+    color: #2b7afb;
+    border: 1px solid #2b7afb;
+}
+
+.result {
+    padding-top: 180rpx;
+    text-align: center;
+	border-top:16rpx solid #f4f4f4;
+
+}
+
+.result image {
+    width: 124rpx;
+}
+
+.result text {
+    display: block;
+    font-size: 36rpx;
+    color: #333;
+    margin: 40rpx 0rpx 50rpx 0rpx;
+}

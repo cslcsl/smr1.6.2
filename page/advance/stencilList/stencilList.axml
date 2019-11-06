@@ -1,0 +1,25 @@
+<view class='stencilWrap'>
+    <view class='stencilListWrap'>
+        <view class='stencilList' a:for='{{list}}' onTap='stencilClick' data-id='{{item.templateId}}' data-url='../stencilDetail/stencilDetail?id={{item.templateId}}&date={{date}}&webType={{webType}}'>
+            <view class='top'>
+                <view class='list'>
+                    <view>会议主题</view>
+                    <view>{{item.content.meetingSubject}}</view>
+                </view>
+            </view>
+            <view class='bottom'>
+                <view class='bottoml'>参会人</view>
+                <view class='bottomR'>
+                    <block a:for='{{item.content.meetingStaffList}}' a:for-item='peopleItem' a:if='{{item.content.meetingStaffList.length>0}}'>{{peopleItem.userName}}
+                        <block a:if='{{(index+1)!=item.content.meetingStaffList.length}}'>、</block>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='addStencilWrap'>
+        <view class='addStencil' onTap='stencilClick' data-url='../stencilAdd/stencilAdd'>
+            新建模版
+        </view>
+    </view>
+</view>

@@ -1,0 +1,107 @@
+.searchTop {
+    background: #f4f4f4;
+    padding: 24rpx 30rpx;
+    box-sizing: border-box;
+    position: relative;
+    color: #464646;
+    font-size: 30rpx;
+}
+
+page {
+    background: #f4f4f4;
+    font-family: "Microsoft Yahei", 微软雅黑, arial, 宋体, sans-serif;
+}
+
+.searchTop image {
+    width: 30rpx;
+    padding: 0rpx 24rpx;
+}
+
+.searchL {
+    background: #fff;
+    border-radius: 8rpx;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.searchR {
+    position: absolute;
+    right: 30rpx;
+    font-size: 32rpx;
+    top: 24rpx;
+    line-height: 80rpx;
+}
+
+.searchList {
+    background: #fff;
+    box-sizing: border-box;
+}
+.searchListWrap{
+	padding-bottom: 150rpx;
+}
+
+.searchList .list {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    color: #2d2d2d;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    padding: 30rpx 0rpx;
+    box-sizing: border-box;
+}
+
+.searchList .listL {
+    width: 38rpx;
+    height: 38rpx;
+    border: 1px solid #808080;
+    border-radius: 100%;
+    margin-right: 20rpx;
+    text-align: center;
+    line-height: 38rpx;
+}
+
+.searchList .stateTrue {
+    background: #2b7afb;
+    border: 1px solid #2b7afb;
+    color: #fff;
+}
+
+.listR text {
+    display: block;
+    color: #666;
+    font-size: 28rpx;
+}
+
+.listR text:first-child {
+    color: #333;
+    font-size: 36rpx;
+    margin-bottom: 16rpx;
+}
+
+.btnList {
+    position: fixed;
+    padding: 30rpx 0rpx;
+    width: 100%;
+    bottom: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    background: #f4f4f4;
+}
+
+.btnList view {
+    width: 44%;
+    margin-left: 4%;
+    display: inline-block;
+}
+
+.btnList view:first-child {
+    background: #fff;
+    color: #2b7afb;
+    border: 1px solid #2b7afb;
+}

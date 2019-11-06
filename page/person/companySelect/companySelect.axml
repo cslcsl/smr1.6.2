@@ -1,0 +1,20 @@
+
+<!-- 列表开始 -->
+<view class='fileWrap'>
+    <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+        <view class='top' a:if='{{item.companyUuid==loginInfo.companyId}}' onTap='companySelect' data-index='{{index}}' data-type='1' data-index='index' data-id="{{item.companyUuid}}">
+            <view>{{item.companyName}}</view>
+            <view a:if='{{item.type==1}}'>
+            </view>
+        </view>
+		<view class='top' a:else onTap='companySelect' data-index='{{index}}' data-type='2' data-index='index' data-id="{{item.companyUuid}}">
+            <view>{{item.companyName}}</view>
+            <view a:if='{{item.type==1}}'>
+            </view>
+        </view>
+        <view class='delete {{item.type==1?"delete1":""}}' style="right:{{item.deleteRight}}rpx">
+            <view onTap='companySelect' data-index='{{index}}' a:if='{{item.companyUuid==loginInfo.companyId}}' data-type='1' data-index='index' data-id="{{item.companyUuid}}">解绑企业</view>
+            <view onTap='companySelect' data-type='2' data-index='index' data-id="{{item.companyUuid}}" a:else>切换企业</view>
+        </view>
+    </view>
+</view>

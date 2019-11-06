@@ -1,0 +1,19 @@
+<view class='menuList'>
+    <view class='list'>
+        <view>头像</view>
+        <view>
+			<image class='advar' mode='scaleToFill' src='{{upload_picture_list}}' a:if='{{upload_picture_list!=""}}' onTap='uploadimage'></image>
+            <image class='advar' mode='scaleToFill' src='{{loginInfo.userIcon}}' a:elif='{{loginInfo!=""}}' onTap='uploadimage'></image>
+            <image class='advar' mode='scaleToFill' src='../../../images/common/advar.png' a:else onTap='uploadimage'></image>
+            <image src='../../../images/common/rightArrow.png' onTap='clearClick' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>姓名</view>
+        <view>
+            <input placeholder-class='placeholder' placeholder='请输入姓名' onInput='nameInput' type='text' value='{{name}}'></input>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix' a:if='{{name!=""}}'></image>
+        </view>
+    </view>
+</view>
+<view class='confirm' onTap='confirm'>保存修改</view>

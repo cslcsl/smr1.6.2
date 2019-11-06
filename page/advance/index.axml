@@ -1,0 +1,127 @@
+<view class='wrapper'>
+    <view class='container'>
+        <view class='month flex m-around datem-around'>
+            <!--<view class='arrow' onTap='prevMonth'>《</view> -->
+            <view class='year-and-month'>
+                <picker mode="date" value="{{date}}" start="2015-09" end="2400-09" fields='month' onChange="bindDateChange">
+                    <view>
+                        {{year}}年{{month}}月
+                    </view>
+                </picker>
+            </view>
+            <!--<view class='arrow' onTap='nextMonth'> 》</view> -->
+        </view>
+        <view class='calendar flex column s-center'>
+            <view class='week-row flex m-around'>
+                <view class='grid' a:for="{{week}}">{{item}}</view>
+            </view>
+            <!-- 周切换效果 -->
+            <block a:if="{{caldenlarWeek}}">
+                <swiper class='swpier-box' current="{{swiperWeekIndex}}" style="height:{{swiperHeight}}px">
+                    <swiper-item class='flex m-around days-table weekcalendar' a:for='{{calendar.weeklist}}' a:for-item='weeekitem' a:for-index='weekindex'>
+                        <view a:for="{{weeekitem}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap' data-type='1'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </block>
+            <!-- 月切换效果 -->
+            <block a:else>
+                <swiper class='swpier-box' current="{{swiperIndex}}" circular='true' onChange='swiperChange' style="height:{{swiperHeight}}px">
+                    <swiper-item class='flex m-around days-table '>
+                        <view a:for="{{calendar.first}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class='flex m-around days-table '>
+                        <view a:for="{{calendar.second}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' data-test='{{(year + "-" +month + "-" + day)}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class='flex m-around days-table'>
+                        <view a:for="{{calendar.third}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item class='flex m-around days-table '>
+                        <view a:for="{{calendar.fourth}}" a:for-item='x' class='grid {{x.month === month?"":"notCurrent"}} {{x.date === today?"choice":x.date==selectDate?"scheduleTrue":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' onTap='bindDayTap'>
+                            <view>{{x.date === today?'今天':x.day}}</view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </block>
+            <view class='calendarArrow {{caldenlarWeek?"":"calendarTransform"}}' catchTap='calendarTransform' data-state='{{caldenlarWeek}}'>
+                <image src='../../images/common/calendarArrow.png' mode='widthFix'></image>
+            </view>
+        </view>
+    </view>
+    <!-- 日历结束 -->
+    <view class='searchWrap'>
+        <view class='searchL'>
+            <image src='../../images/common/searchIcon.png' mode='widthFix'></image>
+            <view class='input placeholder' onTap='nameInputConfirm'>请输入会议室名称</view>
+        </view>
+        <view class='searchR'>
+            <view onTap='conditionFilter'>
+                <image src='../../images/common/ico-shaixuan.png' mode='widthFix'></image>
+            </view>
+        </view>
+    </view>
+    <block a:if='{{dataList.length>0}}'>
+        <view class='roomWrap'>
+            <view class='roomList' a:for='{{dataList}}'>
+                <view class='roomInfo'>
+                    <view class='imageInfo'>
+                        <image src='{{item.meetingPic}}' mode='scaleToFill' a:if='{{item.meetingPic!=""&&item.meetingPic!=null}}' lazy-load='true'></image>
+                        <image src='../../images/common/roomPic.png' mode='scaleToFill' a:else></image>
+                        <view class='textList'>
+                            <view class='titlePrice'>
+                                <text class='title'>{{item.mroomName}}</text>
+                            </view>
+                            <view class='address' a:if='{{item.mroomAddress!=null}}'>{{item.mroomAddress}}</view>
+                        </view>
+                    </view>
+                    <view class='labelList'>
+                        <block a:for='{{item.devicList}}' a:for-item='item1' a:if='{{item.devicList.length>0}}'>
+                            <text>{{item1.equipmentName}}</text>
+                        </block>
+                    </view>
+                </view>
+                <view class='roomTimeList'>
+                    <view class='scaleScollView'>
+                        <scroll-view scroll-x class='scaleScrollCon' scroll-into-view='{{scrollId}}'>
+                            <view class='scaleList clearfix'>
+                                <view a:for='{{item.timeList}}' a:for-item='item2' a:for-index="index2" class='scaleStatus scaleStatus{{item2.statusVal}}' onTap='scaleListClick' data-status='{{item2.statusVal}}' data-index='{{index2}}' data-indexf='{{index}}' data-valueBeginVal='{{item2.valueBeginVal}}' data-valueEndVal='{{item2.valueEndVal}}' id='scaleScrollId{{index2}}'>
+                                    <block a:if='{{index2%2==0}}'>
+                                        <view class='value'>{{item2.valueBeginVal}}</view>
+                                    </block>
+                                    <view class='line'></view>
+                                    <view class='bg'></view>
+                                </view>
+                                <view class='scaleStatus'>
+                                    <view class='line'></view>
+                                    <view class='bg'></view>
+                                </view>
+                            </view>
+                        </scroll-view>
+                        <block a:if='{{selectTimeList.length!=0&&roomIndex==index}}'>
+                            <view class='scaleSeletValue'>{{selectTimeList.begin}}-{{selectTimeList.end}}共{{selectTimeList.hour}}个小时
+                                <block a:if='{{selectTimeList.min!=0}}'>{{selectTimeList.min}}分钟</block>
+                            </view>
+                            <view class='confirmBtnList'>
+                                <view class='confirmBtn' onTap='confirmBtn' data-index='{{index}}' data-id='{{item.mroomId}}' data-type='2'>只订会议室</view>
+                                <view class='confirmBtn' onTap='confirmBtn' data-index='{{index}}' data-id='{{item.mroomId}}' data-type='3'>发起会议</view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<block a:if='{{dataList.length==0&&dataListState}}'>
+    <view class='contentNull'>
+        <image src='../../images/common/nullInfo.png' mode='widthFix'></image>
+        <text>暂无相关数据</text>
+    </view>
+</block>

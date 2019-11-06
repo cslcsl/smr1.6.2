@@ -1,0 +1,5 @@
+{
+	"defaultTitle": "我的消息",
+	"pullRefresh": true,
+	"onReachBottomDistance": 100
+}

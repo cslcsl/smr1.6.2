@@ -1,0 +1,15 @@
+<view class='wrapper'>
+    <view class='wrap'>
+        <view class='list {{item.state?"listSelect":""}}' a:for='{{list}}' onTap='listClick' data-state='{{item.state}}' data-index='{{index}}' data-id='{{item.mroomEquipmentId}}'>
+            <view>
+                <view a:if='{{item.state}}'>
+                    <image src='../../../images/common/checkbox-true.png' mode='widthFix' class='checkboxImg'></image>
+                </view>
+            </view>
+            <view>{{item.equipmentName}}</view>
+        </view>
+    </view>
+</view>
+<view class='buttonWrap' onTap='confirm'>
+    <view class='button'>保存</view>
+</view>

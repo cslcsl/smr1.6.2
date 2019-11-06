@@ -1,0 +1,19 @@
+<view class='searchTop'>
+    <view class='searchL'>
+        <image src='../../../images/common/searchIcon.png' mode='widthFix'></image>
+        <input type='text' placeholder-class='placeholder' bindconfirm='searchInput' value='{{searchTitle}}' placeholder='请输入会议室名称'  confirm-type='search'></input>
+        <image src='../../../images/common/close.png' mode='widthFix' onTap='inputClear' class='close'></image>
+    </view>
+    <view class='searchR' onTap='searchCancel'>取消</view>
+</view>
+<view class='searchList'>
+    <view class='listTop'>
+        <view>搜索历史</view>
+        <view onTap='searchDelete'>
+            <image src='../../../images/common/agendaDelete.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <text onTap='listClick' data-title='{{item}}' a:for='{{searchList}}'>{{item}}</text>
+    </view>
+</view>

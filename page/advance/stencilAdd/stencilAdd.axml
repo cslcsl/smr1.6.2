@@ -1,0 +1,75 @@
+<view class='filterList'>
+    <view class='list'>
+        <view>会议类型<text>*</text></view>
+        <view>
+            <picker onChange="bindMeetingTypeChange" value="{{index}}" range="{{meetingTypearray}}">
+                {{meetingTypearray[meetingTypeIndex]}}
+            </picker>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>主题<text>*</text></view>
+        <view>
+            <input type='text' placeholder-class='placeholder' placeholder='请输入会议主题(必填)' onInput='titleInput' value='{{meetingTitle}}'></input>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>参会人</view>
+        <view onTap='personList' data-type='1'>
+            <text><block a:for='{{selectPeopleList}}' a:if="{{selectPeopleList.length>0}}">{{item.name}}<block a:if='{{index+1!=selectPeopleList.length}}'>、</block></block></text>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+</view>
+<view class='filterList otherTab'>
+    <view class='list'>
+        <view>其它选项</view>
+        <view>
+            <!-- <image src='../../../images/common/ico-arrow.png' mode='widthFix'></image> -->
+        </view>
+    </view>
+</view>
+<view class='filterList'>
+    <view class='list'>
+        <view>会议主持人</view>
+        <view onTap='personList' data-type='2'>
+            <text>{{hostPeopleList[0].name}}</text>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>会议纪要人</view>
+        <view onTap='personList' data-type='3'>
+            <text>{{summaryPeopleList[0].name}}</text>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list' onTap='meetingAgenda'>
+        <view>会议议程</view>
+        <view>
+            <text>{{meetingProcessList.length}}条议程</text>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>会前提醒</view>
+        <view>
+            <picker onChange="bindAlertChange" value="{{index}}" range="{{alertarray}}">
+                提前{{alertarray[pickerAlertIndex]}}分钟
+            </picker>
+            <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <view class='list'>
+        <view>会议签到</view>
+        <view>
+            <switch onChange="switch2Change" color='#2b7afb' checked='{{scanState}}' />
+        </view>
+    </view>
+</view>
+<view class='btnList'>
+	<view class='confirm' onTap='btnCancel'>取消</view>
+    <view class='confirm' onTap='btnClick'>保存</view>
+</view>

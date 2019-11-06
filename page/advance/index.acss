@@ -1,0 +1,566 @@
+/* 时间段选择 */
+
+page {
+    background: #f4f4f4;
+}
+
+.container {
+    /* height: 100vh; */
+    background-color: #fff;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.08);
+    padding-bottom: 10rpx;
+}
+
+.addressTop {
+    font-size: 34rpx;
+    color: #1e1e1e;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background: #fff;
+    padding-bottom: 20rpx;
+}
+
+.addressTop .addressIcon {
+    margin: 0rpx 10rpx 0rpx 20rpx;
+}
+
+.addressIcon image {
+    width: 30rpx;
+}
+
+.addressTop text {}
+
+.scollView, .scaleScollView {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scollView {
+    background: #fafafa;
+    -moz-box-shadow: -5rpx -5rpx 5rpx rgba(228, 230, 236, 0.3) inset;
+    -webkit-box-shadow: -5rpx -5rpx 5rpx rgba(228, 230, 236, 0.3) inset;
+    box-shadow: -5rpx -5rpx 5rpx rgba(228, 230, 236, 0.3) inset;
+    margin: 0rpx 0rpx;
+    height: 90rpx;
+}
+
+.scrollDateCon text {
+    color: #666;
+    font-size: 24rpx;
+}
+
+.scrollDateCon text:first-child {
+    margin: 12rpx 0rpx 0rpx 0rpx;
+}
+
+.scrollCon, .scrollDateCon, .scaleScrollCon {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.dateList view {
+    display: inline-block;
+    font-size: 24rpx;
+    margin: 0px 10rpx 0rpx 10rpx;
+    padding-bottom: 5rpx;
+    text-align: center;
+}
+
+.dateList view text {
+    display: block;
+}
+
+.dateList .select text {
+    color: #b28350 !important;
+}
+
+.dateList text.line {
+    width: 32rpx;
+    height: 6rpx;
+    background: #cfa979;
+    border-radius: 3rpx;
+    margin: 5rpx auto 0rpx auto;
+    text-align: center;
+}
+
+/* 刻度时间效果 */
+
+.scaleScrollCon {
+    margin: 0rpx 40rpx 0rpx 0rpx;
+    padding-top: 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.scaleList {
+    padding: 0rpx 20rpx;
+}
+
+.scaleList .scaleStatus {
+    height: 140rpx;
+    width: 77rpx;
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.scaleList .scaleStatus:last-child {
+    border-left: none !important;
+    width: 20rpx !important;
+}
+
+.scaleList .scaleStatus:last-child .line {
+    border-right: none !important;
+}
+
+.scaleList .scaleStatus .line {
+    width: 100%;
+    display: inline-block;
+    height: 80rpx;
+    position: absolute;
+    bottom: 0rpx;
+    z-index: 1;
+}
+
+.scaleList .scaleStatus:nth-child(2n+1) {
+    border-left: 1px solid #e6e6e6;
+}
+
+.scaleList .scaleStatus:nth-child(96) {
+    border-right: 1px solid #e6e6e6;
+    /* padding-right: 20rpx; */
+}
+
+.scaleList .value {
+    font-size: 20rpx;
+    height: 30rpx;
+    color: #666;
+    display: block;
+    margin-left: 10rpx;
+}
+
+.scaleList .scaleStatus:nth-child(2n+1) .line {
+    border-right: 1px solid #e6e6e6;
+    display: block;
+    margin: 50rpx 0px 0rpx 0rpx;
+    text-align: left;
+}
+
+.scaleList .scaleStatus .bg {
+    position: absolute;
+    bottom: 0rpx;
+    width: 100%;
+    height: 100rpx;
+    left: 0rpx;
+    right: 0rpx;
+    z-index: 9;
+}
+
+.scaleList .scaleStatus0 .bg {
+    background: #eee;
+}
+
+.scaleList .scaleStatus1 .bg {
+    background: #eee;
+}
+
+.scaleList .scaleStatus2 .bg {
+    background: #2b7afb;
+}
+
+.scaleSeletValue {
+    width: 100%;
+    margin: 28rpx 0rpx;
+    text-align: center;
+    font-size: 32rpx;
+}
+
+/* 会议室列表效果 */
+
+.roomTimeList {
+    margin: 0rpx 30rpx;
+}
+
+.roomInfo {
+    margin: 0rpx 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #e8e8ec;
+}
+
+.imageInfo {
+    width: 100%;
+    position: relative;
+}
+
+.imageInfo image {
+    width: 100%;
+    height: 320rpx;
+}
+
+.imageInfo .textList {
+    color: #464646;
+    margin: 0rpx 24rpx;
+}
+
+.titlePrice {
+    width: 100%;
+    position: relative;
+    font-size: 36rpx;
+}
+
+.textList .title {
+    margin: 0rpx 200rpx 0rpx 0rpx;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textList .price {
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+}
+
+.address {
+    font-size: 24rpx;
+    color: #8192a7;
+    margin: 16rpx 0rpx 0rpx 0rpx;
+}
+
+.labelList {
+    margin: 10rpx 24rpx 30rpx 24rpx;
+}
+
+.labelList text {
+    margin: 0rpx 0rpx 5rpx 0rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    background: #f6f8fd;
+    display: inline-block;
+    color: #8192a7;
+    font-size: 24rpx;
+    padding: 0rpx 18rpx;
+    margin-right: 10rpx;
+    border-radius: 19rpx;
+}
+
+.roomList {
+    padding: 0rpx 0rpx 32rpx 0rpx;
+    /* background: #fff; */
+}
+
+.confirmBtn {
+    height: 94rpx;
+    font-size: 34rpx;
+    line-height: 94rpx;
+    margin: 0rpx 40rpx;
+    text-align: center;
+    color: #fff;
+    border-radius: 8rpx;
+    background: #2b7afb;
+}
+
+.contentNull {
+    position: relative !important;
+    margin-top: 60rpx;
+}
+
+/* 日历开始 */
+
+.days-table {
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.calendar {
+    /* position: fixed; */
+    z-index: 10000;
+    top: 80rpx;
+    color: #5a4b41;
+    width: 100%;
+}
+
+.grid {
+    width: 107.14rpx;
+    text-align: center;
+    margin: 0rpx auto;
+}
+
+.days-table .grid {
+    margin: 0px auto 10px auto;
+    /* height: 50px; */
+    position: relative;
+}
+
+.grid view {
+    height: 40px;
+    line-height: 40px;
+    font-size: 28rpx;
+}
+
+.grid view.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ff61ab;
+    margin: 5px auto 0px auto !important;
+    text-align: center;
+    position: absolute;
+    left: 0rpx;
+    right: 0rpx;
+    top: 27px;
+}
+
+.choice view {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #1e8ff4;
+    color: #fff;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 24rpx !important;
+}
+
+.scheduleTrue view {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.scheduleTrue view:first-child {
+    border: 1px solid #1e8ff4;
+}
+
+/* 非本月日期 */
+
+.notCurrent {
+    color: silver;
+}
+
+.day-hover {
+    background: red;
+}
+
+.swpier-box {
+    /* height: 550rpx; */
+    width: 100%;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.arrow {
+    width: 100rpx;
+    color: #464646;
+    text-align: center;
+}
+
+.year-and-month {
+    color: #464646;
+    font-size: 36rpx;
+}
+
+.flex {
+    display: flex;
+}
+
+/* 轴向 */
+
+.column {
+    flex-direction: column;
+}
+
+/* 主轴方向 */
+
+.m-start {
+    justify-content: flex-start;
+}
+
+.m-end {
+    justify-content: flex-end;
+}
+
+.m-around {
+    justify-content: space-around;
+    z-index: 99999;
+}
+
+.week-row {
+    font-size: 28rpx;
+    color: #BBBCCD;
+    line-height: 60rpx;
+    height: 60rpx;
+    width: 100%;
+}
+
+.datem-around {
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #fff;
+    padding: 20rpx 0rpx;
+}
+
+.m-between {
+    justify-content: space-between;
+}
+
+.m-center {
+    justify-content: center;
+}
+
+/* 侧轴方向 */
+
+.s-start {
+    align-items: flex-start;
+}
+
+.s-end {
+    align-items: flex-end;
+}
+
+.s-around {
+    align-items: space-around;
+}
+
+.s-between {
+    align-items: space-between;
+}
+
+.s-center {
+    align-items: center;
+}
+
+/* 日历结束 */
+
+.advanceType {
+    margin: 0rpx 30rpx 30rpx 30rpx;
+    height: 180rpx;
+    background: #fff;
+    border-radius: 0rpx 0rpx 4rpx 4rpx;
+    overflow: hidden;
+}
+
+.advanceType view {
+    width: 33.3%;
+    display: inline-block;
+}
+
+.advanceType view view {
+    margin: 0rpx auto;
+    text-align: center;
+    width: 100%;
+}
+
+.advanceType image {
+    width: 70rpx;
+    height: 70rpx;
+    margin: 24rpx auto 0rpx auto;
+}
+
+.advanceType text {
+    font-size: 30rpx;
+    color: #333;
+    margin: 0rpx auto;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.searchWrap {
+    margin: 30rpx;
+    position: relative;
+    background: #fff;
+    border-radius: 4rpx 4rpx 0rpx 0rpx;
+    padding: 24rpx 0rpx 24rpx 0rpx;
+}
+
+.searchWrap .input {
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #F6F8FD;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+    padding: 0rpx 20rpx 0rpx 50rpx;
+    box-sizing: border-box;
+    margin: 0rpx 0rpx 0rpx 24rpx;
+}
+
+.searchWrap .searchL {
+    margin: 0rpx 96rpx 0rpx 24rpx;
+    background: #F6F8FD;
+    border-radius: 8rpx;
+    position: relative;
+}
+
+.searchWrap .searchL image {
+    width: 30rpx;
+    height: 80rpx;
+    bottom: 25rpx;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: 24rpx;
+}
+
+.searchWrap .searchR {
+    position: absolute;
+    right: 20rpx;
+    top: 35rpx;
+}
+
+.searchWrap .searchR image {
+    width: 60rpx;
+    height: 90rpx;
+    vertical-align: middle;
+}
+
+.confirmBtnList {
+    width: 100%;
+    margin: 0rpx;
+    padding: 0rpx;
+    height: 94rpx;
+}
+
+.confirmBtnList .confirmBtn {
+    width: 48%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.confirmBtnList .confirmBtn:first-child {
+    color: #2b7afb;
+    border: 1px solid #2b7afb;
+    background: #fff;
+    margin-right: 4%;
+}
+
+.calendarArrow {
+    margin: 0rpx;
+    padding: 0rpx;
+    transition: transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    -webkit-transition: -webkit-transform 0.5s;
+    -o-transition: -o-transform 0.5s;
+}
+
+.calendarArrow image {
+    width: 58rpx;
+}
+
+.calendarTransform {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}

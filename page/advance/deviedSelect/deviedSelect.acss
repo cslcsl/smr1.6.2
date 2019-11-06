@@ -1,0 +1,66 @@
+page {
+    background: #f4f4f4;
+    font-family: arial;
+}
+
+.wrapper {
+    padding: 0rpx 0rpx 130rpx 0rpx;
+    margin: 16rpx 0rpx 40rpx 0rpx;
+}
+
+.wrap {
+    background: #fff;
+    padding-left: 30rpx;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.wrap .list {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 30rpx;
+    color: #2d2d2d;
+}
+
+.wrap .list:last-child {
+    border-bottom: none;
+}
+
+.wrap .list view:first-child {
+    width: 38rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    border-radius: 100%;
+    border: 1px solid #808080;
+    text-align: center;
+    margin-right: 20rpx;
+}
+
+.wrap .list view:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wrap .listSelect view:first-child {
+    background: #2b7afb;
+    border: 1px solid #2b7afb;
+    color: #fff;
+}
+
+.buttonWrap {
+    left: 40rpx;
+    right: 40rpx;
+    position: fixed;
+    bottom: 40rpx;
+    box-sizing: border-box;
+}
+
+.button {
+    margin: 0rpx 40rpx 0rpx 0rpx;
+    width: 100%;
+}

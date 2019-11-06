@@ -1,0 +1,137 @@
+.loginImg image {
+    width: 100%;
+    height: auto;
+}
+
+.formWrap .title {
+    margin: 60rpx 0rpx 60rpx 60rpx;
+    font-size: 40rpx;
+    color: #2d2d2d;
+    font-weight: bold;
+}
+
+.formWrap {
+    left: 0rpx;
+    right: 0rpx;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0rpx;
+    bottom: 0rpx;
+    padding: 0rpx 40rpx;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.formList {
+    width: 100%;
+}
+
+.formList input, .formList view {
+    /* width: 100%; */
+    height: 94rpx;
+    line-height: 94rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    padding: 0rpx 30rpx 0rpx 15rpx;
+    margin-bottom: 30rpx;
+    font-size: 30rpx;
+    position: relative;
+}
+
+.formList .picker {
+    position: absolute;
+    left: 30rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    padding-right: 25rpx;
+    border-right: 1px solid #999;
+    float: left;
+}
+.formList .row{
+  padding:0rpx;
+}
+.formList .picker .countryName{
+	width:90rpx;
+	float: left;
+	display: block;
+	padding-right:15rpx;
+  height:94rpx;
+  line-height: 94rpx;
+}
+.formList .picker .arrow{
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    margin-top:45rpx;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #5a5b5d;
+}
+
+.formList view:first-child input {
+    margin-left: 180rpx;
+}
+
+.formList image {
+    width: 30rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 32rpx;
+    height: 94rpx;
+    vertical-align: middle;
+}
+
+.placeholder {
+    color: #999;
+}
+
+.formList .button {
+    margin-top: 40rpx;
+    text-align: center;
+    background: #ccc;
+    font-size: 34rpx;
+    color: #fff;
+}
+
+.formList .confirm {
+    background: #2b7afb;
+}
+
+.loginOther {
+    position: fixed;
+    bottom: 0rpx;
+    width: 100%;
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+.loginOther .title {
+    color: #ccc;
+    font-size: 28rpx;
+}
+
+.loginOther image {
+    width: 80rpx;
+    margin: 40rpx auto;
+}
+
+.loginBg {
+    position: fixed;
+    top: 0rpx;
+    bottom: 0rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.loginBg image {
+    width: 100%;
+    height: 100%;
+}

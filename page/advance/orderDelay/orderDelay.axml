@@ -1,0 +1,28 @@
+<view class='wrapper'>
+    <view class='searchList'>
+        <view class='list' a:for='{{delayList1}}' onTap='userListClick' data-state='{{item.state}}' data-index='{{index}}' data-type='1'>
+            <view class='listR'>延长{{item.name}}分钟
+            </view>
+            <view class='listSelect'>
+                <block a:if='{{item.state}}'>
+                    <image src='../../../images/common/iconDelay.png' mode='widthFix'></image>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class='selectMeeting'>选择会议室</view>
+    <view class='searchList'>
+        <view class='list' a:for='{{delayList2}}' onTap='userListClick' data-state='{{item.state}}' data-index='{{index}}' data-type='2'>
+            <view class='listL {{item.state==3?"stateFalse":item.state==true?"stateTrue":""}}'>
+                <block a:if='{{item.state==true}}'>
+                    <image src='../../../images/common/checkbox-true.png' mode='widthFix'></image>
+                </block>
+            </view>
+            <view class='listR {{item.state==3?"stateFalseR":""}}'>{{item.mroomName}}
+            </view>
+        </view>
+    </view>
+</view>
+<view class='btnList' onTap='confirmBtn'>
+    <view class='button'>保存</view>
+</view>

@@ -1,0 +1,143 @@
+page {
+    background: #f4f4f4;
+}
+
+.wrapperWrap {
+    padding-bottom: 140rpx;
+}
+
+.personTop image {
+    width: 100%;
+}
+.color label{
+	color:#ccc !important;
+}
+.wrapper {
+    background: #fff;
+    position: relative;
+}
+.personInfo {
+    position: absolute;
+    top: -95rpx;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+	margin:0rpx auto;
+	text-align: center;
+}
+.personWrap {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 0rpx 40rpx;
+    color: #333;
+    font-size: 40rpx;
+    box-sizing: border-box;
+}
+
+.personWrap view {
+    margin-right: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    max-width: 50%;
+}
+
+.personInfo .advar {
+    width: 180rpx;
+    height: 180rpx;
+	border:25rpx solid #fff;
+    border-radius: 100%;
+}
+
+.personWrap .editIcon {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.iconList {
+    background: #fff;
+    padding: 30rpx 0rpx 12rpx 0rpx;
+}
+
+.iconList .list {
+    width: 50%;
+    display: inline-block;
+    margin: 0rpx auto;
+    text-align: center;
+    font-size: 32rpx;
+    color: #464646;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.iconList .list:first-child {
+    border-right: 1px solid #ccc;
+    margin-left: -1px;
+}
+
+.iconList image {
+    width: 80rpx;
+    height: 80rpx;
+    vertical-align: middle;
+}
+
+.iconList label {
+    margin-left: 20rpx;
+}
+
+.menuList {
+    margin:115rpx 30rpx 30rpx 30rpx;
+    padding: 230rpx 30rpx 0rpx 30rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    box-shadow: 0rpx 8rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.menuList .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background: #fff;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 32rpx;
+    color: #8192a7;
+}
+
+.menuList .list:last-child {
+    border-bottom: none;
+}
+
+.menuList image {
+    width: 17rpx;
+    height: 90rpx;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 70rpx 0rpx 0rpx 20rpx;
+}
+
+.menuList text {
+    color: #2d2d2d;
+}
+
+.loginOut {
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #2b7afb;
+    position: fixed;
+    height: 94rpx;
+    line-height: 94rpx;
+    display: block;
+    left: 40rpx;
+    right: 40rpx;
+    bottom: 40rpx;
+    margin: 0rpx auto;
+    text-align: center;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+    color: #2b7afb;
+}

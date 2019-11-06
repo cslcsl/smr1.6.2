@@ -1,0 +1,40 @@
+<view class='searchTop'>
+    <view class='searchL'>
+        <image src='../../../images/common/searchIcon.png' mode='widthFix'></image>
+        <input type='text' placeholder-class='placeholder' bindconfirm='searchInput' onInput='searchInput2' value='{{searchTitle}}' placeholder='请输入人员名称' confirm-type='search'></input>
+    </view>
+    <block a:if="{{searchTitle!=''}}">
+        <view class='searchR' onTap='searchCancel'>
+            <image src='../../../images/common/close.png' mode='widthFix'></image>
+        </view>
+    </block>
+</view>
+<view class='searchBt'>
+    <view a:for='{{parentIdList}}' onTap='parentClick' data-id='{{item.orgId}}' data-index='{{index}}'>{{item.orgName}}
+        <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+    </view>
+</view>
+<view class='searchListWrap'>
+    <view class='searchList'>
+        <view class='list' a:for='{{orgList}}' onTap='orgListClick' data-state='' data-index='{{index}}'>
+            <view class='listR'><text></text>{{item.orgName}}</view>
+            <view class='listImage'>
+                <image src='../../../images/common/rightArrow.png' mode='widthFix'></image>
+            </view>
+        </view>
+        <view class='list' a:for='{{userList}}' onTap='userListClick' data-state='{{item.state}}' data-index='{{index}}'>
+            <view class='listL {{item.state?"stateTrue":""}}'>
+                <block a:if='{{item.state}}'>
+                    <image src='../../../images/common/checkbox-true.png' mode='widthFix' class='checkboxImg'></image>
+                </block>
+            </view>
+            <view class='listR'>{{item.name}}</view>
+        </view>
+    </view>
+</view>
+<view class='searchResult'>
+    <view>
+        <navigator url='../../schedule/personList/personList?type={{webType}}'>已选择{{peopleNum}}人</navigator>
+    </view>
+    <view onTap='peopleConfirm'>保存</view>
+</view>

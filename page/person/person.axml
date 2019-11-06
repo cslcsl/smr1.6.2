@@ -1,0 +1,74 @@
+<view class='wrapperWrap'>
+    <view class='wrapper'>
+        <view class='personInfo'>
+            <view>
+                <image class='advar' mode='scaleToFill' src='{{loginInfo.userIcon}}' a:if='{{loginInfo.userIcon!=null&&loginInfo.userIcon!=""}}'></image>
+                <image class='advar' mode='scaleToFill' src='../../images/common/advar.png' a:else></image>
+            </view>
+            <view class='personWrap'>
+                <view class='name'>{{loginInfo.userName}}</view>
+                <view>
+                    <image class='editIcon' mode='scaleToFill' src='../../images/common/loginEdit2.png' onTap='webBreak' data-url='personEdit/personEdit'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='menuList'>
+        <view class='list' onTap='companyUntying'>
+            <view>我的企业</view>
+            <view>
+                <label>{{loginInfo.companyName}}</label>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='wechatBind'>
+            <view>绑定微信</view>
+            <view>
+                <label a:if='{{loginInfo.openId==null}}'>绑定微信</label>
+                <label a:else>解绑微信</label>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='changePassword'>
+            <view>修改密码</view>
+            <view>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='faceScan' data-url='faceScan/faceScan'>
+            <view>人脸采集</view>
+            <view class='color'>
+                <label a:if='{{faceState}}'>已采集</label>
+                <label a:else>采集信息后即可刷脸开门</label>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='webBreak2' data-url='../advance/stencilList/stencilList?date={{selectDate}}'>
+            <view>会议模版</view>
+            <view>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='webBreak2' data-url='orderList/orderList'>
+            <view>我的订单</view>
+            <view>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='faceScan' data-url='serviceList/serviceList'>
+            <view>服务单</view>
+            <view>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+        <view class='list' onTap='faceScan' data-url='fileList/fileList'>
+            <view>我的文件夹</view>
+            <view>
+                <image mode='widthFix' src='../../images/common/rightArrow.png'></image>
+            </view>
+        </view>
+    </view>
+</view>
+<!--<block a:if='{{loginState}}'> -->
+<view class='loginOut' onTap='loginOut'>退出登录</view>
+<!--</block> -->

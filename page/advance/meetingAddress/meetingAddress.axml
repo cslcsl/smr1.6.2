@@ -1,0 +1,53 @@
+
+<view class='agendaWrap' a:if='{{scheduleStatus!=0}}'>
+    <view class='button' onTap='agendaAdd' data-type='1'>
+        自定义会议地点
+    </view>
+    <view class='button' onTap='goMeeting' data-type='1'>
+        预订会议室
+    </view>
+</view>
+<!-- 添加-->
+<block a:if='{{agendaState}}'>
+    <view class='maskBg'>
+        <view class='agendaAddWrap {{agendaState?"fadeInUp animated":""}}'>
+            <view class='agendaAdd'>
+            </view>
+            <view class='agendaAddTop'>
+                自定义会议地点
+            </view>
+            <view class='addList'>
+                <view>
+                    <input placeholder-class='placeholder' placeholder='请输入会议地点(必填)' onInput='meetingInput' cursor-spacing='100' type='text' value='{{meeting}}'></input>
+					<image src='../../../images/common/close.png' mode='widthFix' catchTap='meetingInputClear' a:if='{{meeting!=""}}'></image>
+                </view>
+                <view>
+				<textarea placeholder-class='placeholder ' placeholder='请输入地址(必填)' onInput='addressInput' cursor-spacing='50' value='{{address}}' fixed></textarea>
+                </view>
+            </view>
+			<view class='agendaAddBottom'>
+                <view catchTap='agendaCancel'>取消</view>
+                <view catchTap='agendaComplete' class="{{meeting!=''&&address!=''?'green':''}}">保存</view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 列表开始 -->
+<view class='fileWrap'>
+    <view class='fileList' a:for='{{fileList}}' touchStart="drawStart" touchMove="drawMove" touchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+        <view class='top'>
+            <view>{{item.mroomName}}</view>
+            <view a:if='{{item.type==1}}'>{{filters.scheduleTime(item.bookStartTime,11,16)}}-{{filters.scheduleTime(item.bookEndTime,11,16)}}
+            </view>
+        </view>
+        <view>
+            <!-- <text>{{item.projectName}}</text> -->
+            <text>{{item.mroomAddress}}</text>
+        </view>
+        <view class='delete {{item.type==1?"delete1":""}}' style="right:{{item.deleteRight}}rpx">
+            <!-- <view onTap='goMeeting' data-index='{{index}}' a:if='{{item.type==1}}' data-type='2' data-id='{{item.orderId}}'>更换</view> -->
+            <view onTap='agendaAdd' data-index='{{index}}' a:if='{{item.type==2}}' data-type='2'>编辑</view>
+            <view class='deleteBtn' onTap='delItem' data-index='{{index}}'>删除</view>
+        </view>
+    </view>
+</view>
