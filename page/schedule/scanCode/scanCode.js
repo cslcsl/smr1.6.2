@@ -165,9 +165,9 @@ Page({
   createQrCode: function(url, canvasId, cavW, cavH) {
     //调用插件中的draw方法，绘制二维码图片
     QR.api.draw(url, canvasId, cavW, cavH);
-    setTimeout(() => {
-      this.canvasToTempImage();
-    }, 500);
+    // setTimeout(() => {
+    //   this.canvasToTempImage();
+    // }, 500);
   },
   canvasToTempImage: function() {
     var that = this;
@@ -180,7 +180,6 @@ Page({
         that.setData({
           imagePath: tempFilePath,
         });
-		
       },
       fail: function(res) {
         console.log(res);

@@ -14,7 +14,7 @@ Page({
         bookId: '',
         startTime: '',
         endTime: '',
-		scheduleStatus:1
+        scheduleStatus: 1
     },
     onLoad: function(options) {
         this.setData({
@@ -22,14 +22,14 @@ Page({
             date: options.date,
             bookId: options.bookId
         })
-		if (options.webType==3) {
-			this.setData({
-				scheduleStatus: options.scheduleStatus
-			})
-		}
-        if (dd.getStorageSync({key:'meetingAddressList'}).data != '' && dd.getStorageSync({key:'meetingAddressList'}).data != undefined) {
+        if (options.webType == 3) {
             this.setData({
-                fileList: dd.getStorageSync({key:'meetingAddressList'}).data
+                scheduleStatus: options.scheduleStatus
+            })
+        }
+        if (dd.getStorageSync({ key: 'meetingAddressList' }).data != '' && dd.getStorageSync({ key: 'meetingAddressList' }).data != undefined) {
+            this.setData({
+                fileList: dd.getStorageSync({ key: 'meetingAddressList' }).data
             })
         }
         if (options.startTime != '' && options.startTime != undefined) {
@@ -40,12 +40,12 @@ Page({
         }
     },
     onShow: function() {
-        if (dd.getStorageSync({key:'meetingAddressList'}).data != undefined && dd.getStorageSync({key:'meetingAddressList'}).data != '' || dd.getStorageSync({key:'meetingAddressList'}).data.length == 0) { //会议地点
+        if (dd.getStorageSync({ key: 'meetingAddressList' }).data != undefined && dd.getStorageSync({ key: 'meetingAddressList' }).data != '' || dd.getStorageSync({ key: 'meetingAddressList' }).data.length == 0) { //会议地点
             this.setData({
-                fileList: dd.getStorageSync({key:'meetingAddressList'}).data
+                fileList: dd.getStorageSync({ key: 'meetingAddressList' }).data
             })
         }
-		console.log(this.data.fileList)
+        console.log(this.data.fileList)
     },
     drawStart: function(e) {
         var touch = e.touches[0]
@@ -145,7 +145,7 @@ Page({
                     if (delType == 1) {
                         that.agendaComplete(1);
                     }
-                    dd.setStorageSync({key:'meetingAddressList', data:that.data.fileList});
+                    dd.setStorageSync({ key: 'meetingAddressList', data: that.data.fileList });
                 } else {
                     utils.showToast(e.data.message, 1000)
                 }
@@ -164,12 +164,11 @@ Page({
                 confirmColor: '#2B7AFB',
                 success(res) {
                     if (res.confirm) {
-
-                      if (fileList[index].type == 1 && fileList[index].orderId != '') {
+                        if (fileList[index].type == 1 && fileList[index].orderId != '') {
                             var url = '/conference/deleteMeeting?orderId=' + fileList[index].orderId
                             utils.ajax(utils.setURL(url), sendData, callBack);
                         } else {
-                        if (fileList[index].locationId != ''&&fileList[index].locationId != undefined) {
+                            if (fileList[index].locationId != '' && fileList[index].locationId != undefined) {
                                 var url = '/conference/deleteCustomPlace?locationId=' + fileList[index].locationId
                                 utils.ajax(utils.setURL(url), sendData, callBack, 'DELETE');
                             } else {
@@ -181,10 +180,10 @@ Page({
                                 that.setData({
                                     fileList: list
                                 })
-                                dd.setStorageSync({key:'meetingAddressList', data:that.data.fileList});
+                                dd.setStorageSync({ key: 'meetingAddressList', data: that.data.fileList });
                             }
                         }
-                    } else if (res.cancel) {}
+                    } else if (res.cancel) { }
                 }
             })
         } else {
@@ -197,24 +196,24 @@ Page({
                         list.push(fileList[i]);
                     }
                 }
-				var listAdd = {
-					mroomName: this.data.meeting,
-					mroomAddress: this.data.address,
-					bookStartTime: '',
-					bookEndTime: '',
-					locationId: '',
-					bookId: '',
-					type: 2
-				}
-				list.push(listAdd);
+                var listAdd = {
+                    mroomName: this.data.meeting,
+                    mroomAddress: this.data.address,
+                    bookStartTime: '',
+                    bookEndTime: '',
+                    locationId: '',
+                    bookId: '',
+                    type: 2
+                }
+                list.push(listAdd);
                 that.setData({
                     fileList: list,
-					agendaState: false,
-					meeting: '',
-					address: '',
-					agendaIndex: -1
+                    agendaState: false,
+                    meeting: '',
+                    address: '',
+                    agendaIndex: -1
                 })
-                dd.setStorageSync({key:'meetingAddressList', data:that.data.fileList});
+                dd.setStorageSync({ key: 'meetingAddressList', data: that.data.fileList });
             }
         }
     },
@@ -266,7 +265,7 @@ Page({
             that.delItem(1);
             return;
         }
-		if ((that.data.webType == 2 || that.data.webType == 3 )&& that.data.bookId!='') {
+        if ((that.data.webType == 2 || that.data.webType == 3) && that.data.bookId != '') {
             var sendData = {
                 address: that.data.meeting,
                 bookId: that.data.bookId,
@@ -292,7 +291,7 @@ Page({
                             address: '',
                             agendaIndex: -1
                         })
-                        dd.setStorageSync({key:'meetingAddressList', data:that.data.fileList});
+                        dd.setStorageSync({ key: 'meetingAddressList', data: that.data.fileList });
                     } else {
                         utils.showToast(e.data.message, 1000)
                     }
@@ -322,21 +321,21 @@ Page({
                 agendaIndex: -1
             })
         }
-        dd.setStorageSync({key:'meetingAddressList', data:that.data.fileList});
+        dd.setStorageSync({ key: 'meetingAddressList', data: that.data.fileList });
     },
     goMeeting: function(e) {
         console.log(this.data.fileList);
         if (e.currentTarget.dataset.type == 2) { //更换会议室
-			var urlValue = '../searchResult/searchResult?webType=1&fromType=2&mroomName=&date=' + this.data.date + '&mroomId=' + e.currentTarget.dataset.id + '&mroomIndex=' + e.currentTarget.dataset.index + '&type=' + this.data.webType + '&bookId=' + this.data.bookId + '&startTime=' + this.data.startTime + '&endTime=' + this.data.endTime;
+            var urlValue = '../searchResult/searchResult?webType=1&fromType=2&mroomName=&date=' + this.data.date + '&mroomId=' + e.currentTarget.dataset.id + '&mroomIndex=' + e.currentTarget.dataset.index + '&type=' + this.data.webType + '&bookId=' + this.data.bookId + '&startTime=' + this.data.startTime + '&endTime=' + this.data.endTime;
         } else {
-			var urlValue = '../searchResult/searchResult?webType=1&fromType=2&mroomName=&date=' + this.data.date + '&mroomId=&mroomIndex=&type=' + this.data.webType + '&bookId=' + this.data.bookId + '&startTime=' + this.data.startTime + '&endTime=' + this.data.endTime;
+            var urlValue = '../searchResult/searchResult?webType=1&fromType=2&mroomName=&date=' + this.data.date + '&mroomId=&mroomIndex=&type=' + this.data.webType + '&bookId=' + this.data.bookId + '&startTime=' + this.data.startTime + '&endTime=' + this.data.endTime;
         }
         dd.redirectTo({
             url: urlValue,
         })
-	}, meetingInputClear:function(){
-		this.setData({
-			meeting:''
-		})
-	}
+    }, meetingInputClear: function() {
+        this.setData({
+            meeting: ''
+        })
+    }
 })

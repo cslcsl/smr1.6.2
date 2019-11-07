@@ -8,7 +8,7 @@
 
             <view class='scanQR' a:if='{{showSign}}'>
                 <image class='qrImage' src='{{imagePath}}' mode='widthFix'></image>
-                <canvas hidden='{{canvasHidden}}' style="width: 686rpx; height: 686rpx;background:#ddffff;" canvas-id="mycanvas" />
+                <canvas style="width: 686rpx; height: 686rpx;background:#ddffff;" canvas-id="mycanvas" />
                 <view>
                     <label class='qrTip'>扫二维码签到</label>
                 </view>

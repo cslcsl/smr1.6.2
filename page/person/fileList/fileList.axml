@@ -1,6 +1,6 @@
 
 <view class='fileWrap'>
-    <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+    <view class='fileList' a:for='{{fileList}}' onTouchStart="drawStart" onTouchMove="drawMove" onTouchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
         <view class='fileL'>
             <image src='../../../images/common/JPG.png' mode='widthFix'></image>
             <text>{{item.type}}

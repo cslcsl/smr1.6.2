@@ -220,7 +220,7 @@
 <!-- 文件开始 -->
 <block a:if='{{tabType==2}}'>
     <view class='fileWrap'>
-        <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}' a:if='{{fileType==1}}'>
+        <view class='fileList' a:for='{{fileList}}' onTouchStart="drawStart" onTouchMove="drawMove" onTouchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}' a:if='{{fileType==1}}'>
             <view class='fileL'>
                 <image src='../../../images/common/JPG.png' mode='widthFix'></image>
                 <text>{{item.type}}
@@ -243,7 +243,7 @@
                 <view class='delete' onTap='fileDelete' data-userid='{{item.userId}}' data-id='{{item.id}}' data-index='{{index}}' data-type='1'>删除</view>
             </view>
         </view>
-		<view class='fileList' a:for='{{fileList2}}' bindtouchstart="drawStart1" bindtouchmove="drawMove1" bindtouchend="drawEnd1" style="right:{{item.right}}rpx" data-index='{{index}}' a:if='{{fileType==2}}'>
+		<view class='fileList' a:for='{{fileList2}}' onTouchStart="drawStart1" onTouchMove="drawMove1" onTouchEnd="drawEnd1" style="right:{{item.right}}rpx" data-index='{{index}}' a:if='{{fileType==2}}'>
             <view class='fileL'>
                 <image src='../../../images/common/JPG.png' mode='widthFix'></image>
                 <text>{{item.type}}

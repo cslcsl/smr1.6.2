@@ -1,7 +1,7 @@
 
 <!-- 列表开始 -->
 <view class='fileWrap'>
-    <view class='fileList' a:for='{{fileList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+    <view class='fileList' a:for='{{fileList}}' onTouchStart="drawStart" onTouchMove="drawMove" onTouchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
         <view class='top' a:if='{{item.companyUuid==loginInfo.companyId}}' onTap='companySelect' data-index='{{index}}' data-type='1' data-index='index' data-id="{{item.companyUuid}}">
             <view>{{item.companyName}}</view>
             <view a:if='{{item.type==1}}'>

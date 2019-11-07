@@ -34,7 +34,7 @@
 </block>
 <!-- 列表开始 -->
 <view class='fileWrap'>
-    <view class='fileList' a:for='{{fileList}}' touchStart="drawStart" touchMove="drawMove" touchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+    <view class='fileList' a:for='{{fileList}}' onTouchStart="drawStart" onTouchMove="drawMove" onTouchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
         <view class='top'>
             <view>{{item.mroomName}}</view>
             <view a:if='{{item.type==1}}'>{{filters.scheduleTime(item.bookStartTime,11,16)}}-{{filters.scheduleTime(item.bookEndTime,11,16)}}

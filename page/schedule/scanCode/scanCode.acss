@@ -101,9 +101,9 @@ page {
     color: #8192a7;
 }
 
-.scanQR canvas {
+/* .scanQR canvas {
     position: fixed;
     top: 999999rpx;
     left: 0;
     z-index: -1;
-}
+} */

@@ -374,6 +374,7 @@ page {
 
 .btTitle image {
     width: 20rpx;
+    height: 25rpx !important;
 }
 
 .peopleList {
@@ -718,6 +719,8 @@ page {
 
 .messageTitle image {
     width: 25rpx;
+    height:25rpx !important;
+    margin-right:10rpx;
 }
 
 .messageWrap .fileL {

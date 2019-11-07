@@ -145,7 +145,7 @@
             </view>
         </view>
         <view class='fileWrap' a:if='{{fileList2.length>0}}'>
-            <view class='fileList' a:for='{{fileList2}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+            <view class='fileList' a:for='{{fileList2}}' onTouchStart="drawStart" onTouchMove="drawMove" onTouchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
                 <view class='fileL'>
                     <image src='../../../images/common/JPG.png' mode='widthFix'></image>
                     <label>{{item.type}}
@@ -176,7 +176,7 @@
             </view>
         </view>
         <view class="messageWrap fileWrap" a:if='{{messageList.length>0}}'>
-            <view class='fileList' a:for='{{messageList}}' bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
+            <view class='fileList' a:for='{{messageList}}' onTouchStart="drawStart" onTouchMove="drawMove" onTouchEnd="drawEnd" style="right:{{item.right}}rpx" data-index='{{index}}'>
                 <view class='fileL'>
                     <image src='{{item.avatarPicture}}' mode='scaleToFill' a:if='{{item.avatarPicture!=""}}'></image>
                     <image src='../../../images/common/advar.png' mode='scaleToFill' a:else></image>
